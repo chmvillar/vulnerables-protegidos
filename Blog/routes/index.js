@@ -4,11 +4,11 @@ const router = express.Router();
 
 module.exports = function(){
     router.get('/', (req, res) => {
-        res.send('inicio')
+        res.render('home')
     });
 
     router.get('/crear-cuenta', (req, res) => {
-        res.send('Crear Cuenta')
+        res.render('crear-cuenta')
     });
     return router;
 }
