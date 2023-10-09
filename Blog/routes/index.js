@@ -7,8 +7,12 @@ module.exports = function(){
         res.render('home')
     });
 
-    router.get('/crear-cuenta', (req, res) => {
-        res.render('crear-cuenta')
+    router.get('/iniciar-sesion', (req, res) => {
+        res.render('iniciar-sesion')
     });
+    router.get('/foro', (req, res) => {
+        res.render('foro')
+    });
+
     return router;
 }
