@@ -1,8 +1,14 @@
+//const mongoose = require('mongoose')
+//require('./config/db');
+
 const express = require('express');
 const path = require('path');
 const router = require('./routes');
 const expressEjsLayouts = require('express-ejs-layouts');
 
+
+const db = require('./config/db')
+db.sync().then(() => console.log('Conexion Existosa a la DB')).catch((error) => console.log(error));
 require('dotenv').config({path: 'variables.env'});
 const app = express();
 

@@ -11,3 +11,4 @@ Instalar dependencias
 -   npm install --save-dev nodemon
 -   npm install -save ejs
 -   npm install --save express-ejs-layouts
+-   npm install --save sequelize pg

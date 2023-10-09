@@ -13,10 +13,10 @@ h1,h2{
     text-align: center;
 }
 h1 {
-    font-size: 3.2rem;
+    font-size: 18;
 }
 h2 {
-    font-size: 2.8rem;
+    font-size: 18rem;
 }
 h3 {
     text-align: left;
@@ -188,21 +188,6 @@ p {
         justify-content: space-between;
     }
 }
-nav.nav a {
-    padding: 1rem;
-    display: inline-block;
-}
-nav.nav a:first-child {
-
-
-    border-right: 1px solid #E6E6E6;
-}
-nav.nav a:nth-child(2){
-    color: #11d48c;
-    font-weight: 700;
-
-}
-
 /** hero **/
 .hero {
     height: 38rem;
