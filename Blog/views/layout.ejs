@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Blog Vuluntariado</title>
+        <title>Blog Vuluntariado <%- nombrePagina %></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
@@ -13,15 +13,24 @@
     <body>
         <header class="site-header contenedor">
             <a href="/">
-                <img src="/img/logoWeb.jpeg" alt="">
+                <img src="/img/logonuevo.jpeg" alt="">
             </a>
             <nav class="nav">
                 <a href="/foro">Crear Foro</a>
                 <a href="/iniciar-sesion">Iniciar Sesion</a>
-    
+                <a href="/registrar">Registrarse</a>
             </nav>
+           
+           
         </header>
+        <footer class="site-footer contenedor">
+            <nav class="nav">
+                <a href="/foro">Crear Foro</a>
+                <a href="/iniciar-sesion">Iniciar Sesion</a>
+            </nav>
 
+            <p class="copyright">Todos los derechos reservados APT 2023 &copy;</p>
+        </footer>
     <!--imprimir las variables que queramos imprimiremos todos los body de las paginas realizacionadas en el views ya que este es nuestro main -->
     <%- body %>
     </body>

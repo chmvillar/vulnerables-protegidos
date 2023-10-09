@@ -16,8 +16,15 @@ app.set('views', path.join(__dirname, './views'));
 //Archivos Staticos
 app.use(express.static('public'));
 
+//middleware (voluntario con cuenta iniciada, fecha etc)
+app.unsubscribe((req, res, next) =>{
+    const fecha = new Date()
+    res.localsyear = fecha.getFullYear();
+    next();
+});
 //routing
 app.use('/', router())
+
 
 app.listen(process.env.PORT, () => {
     console.log('Esta Vivo!!!!');
