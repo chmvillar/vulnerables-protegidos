@@ -1,1 +1,16 @@
-<h1> <%- nombrePagina %> </h1>
+<main class="contenedor contenedor-formulario">
+    <h1> <%- nombrePagina %>  </h1>
+
+    <form action="/registrar" method="POST" class="default-form">
+        <div class="campo">
+            <label for=""> Correo </label>
+            <input type="email" name="correo" placeholder="Correo Electronico">
+        </div>
+    
+        <div class="campo">
+            <label> Contraseña </label>
+            <input type="password" name="Contraseña" placeholder="Contraseña">
+        </div>
+
+    </form>
+</main>
