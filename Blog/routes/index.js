@@ -8,7 +8,8 @@ const registrarcontroller = require('../controllers/registrarControllers')
 module.exports = function(){
     router.get('/', homeController.home);
     router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
-    router.get('/foro', forocontroller.foro)
-    router.get('/registrar', registrarcontroller.registrar)
+    router.get('/foro', forocontroller.foro);
+    router.get('/registrar', registrarcontroller.registrar);
+    router.post('/registrar', registrarcontroller.registrarCuenta);
     return router;
 }

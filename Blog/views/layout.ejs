@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/nav.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
@@ -13,19 +13,18 @@
 
     </head>
     <body>
+      <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io">
+              <a class="navbar-item" href="/">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
               </a>
-          
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
             </div>
-          
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item" href="/">
@@ -38,7 +37,6 @@
                   <a class="navbar-link">
                     More
                   </a>
-          
                   <div class="navbar-dropdown">
                     <a class="navbar-item">
                       Nosotros
@@ -49,7 +47,6 @@
                   </div>
                 </div>
               </div>
-          
               <div class="navbar-end">
                 <div class="navbar-item">
                   <div class="buttons">
@@ -61,16 +58,15 @@
               </div>
             </div>
           </nav>
-
+         </header>
     <!--imprimir las variables que queramos imprimiremos todos los body de las paginas realizacionadas en el views ya que este es nuestro main -->
     <%- body %>
     <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            Todos los derechos reservados APT 2023
-          </p>
-        </div>
-      </footer>
-
+      <div class="content has-text-centered">
+        <p>
+          Todos los derechos reservados APT 2023
+        </p>
+      </div>
+  </footer>
     </body>
 </html>

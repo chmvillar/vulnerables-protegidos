@@ -4,51 +4,53 @@ const bcrypt = require('bcrypt-nodejs');
 
 const Usuarios = db.define('usuarios', {
     id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER, 
         primaryKey: true,
-        autoIncreement: true
+        autoIncrement: true
     },
-    nombre: Sequelize.STRING(60),
-    email:{
+    nombre : Sequelize.STRING(60),
+    imagen : Sequelize.STRING(60),
+    descripcion: Sequelize.TEXT,
+    email: {
         type: Sequelize.STRING(30),
-        allowNull:false,
+        allowNull: false, 
         validate: {
-            isEmail: {msg: 'Agrega un Correo Valido'}
+            isEmail: { msg : 'Agrega un correo válido'}
         },
-        unique: {
+        unique : {
             args: true,
-            msg: 'Usuario ya registrado' 
+            msg : 'Usuario ya registrado'
         }
     },
     password: {
         type: Sequelize.STRING(60),
         allowNull: false,
-        validate: {
-            notEmpty:{
+        validate : {
+            notEmpty : {
                 msg : 'El password no puede ir vacio'
-
             }
         }
-    },
-    activo: {
+    }, 
+    activo : {
         type: Sequelize.INTEGER,
         defaultValue: 0
     },
-    tokenPassword : Sequelize.STRING,
+    tokenPassword : Sequelize.STRING, 
     expiraToken : Sequelize.DATE
-
 }, {
-    hooks:{
-        beforeCreate(usuario) {
-            usuario.password = bcrypt.hashSync(usuario.password, bcrypt.genSaltSync(10), null);
-        },
+    hooks: {
+        beforeCreate(usuario) { 
+            usuario.password = Usuarios.prototype.hashPassword(usuario.password);
+        }
     }
 });
 
-
-//Metodo para comparar las contraseñas
-
-Usuarios.prototype.validarPassword = function(password){
-    return bcrupt.compareSync(password, this.password);
+// Método para comparar los password
+Usuarios.prototype.validarPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
 }
+Usuarios.prototype.hashPassword = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null );
+}
+
 module.exports = Usuarios;

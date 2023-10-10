@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-bottom: 40px; 
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 40px); 
+    margin-top: 20px; 
+}
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    /* ajuste para el formulario */
+    margin-bottom: 300px; 
+    margin-top: 10px;
+}
+
+.container form h2 {
+    margin-bottom: 20px;
+}
+
+.container form .form-group {
+    margin-bottom: 15px;
+}
+
+.container form .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.container form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container form .btn {
+    background-color: #08CF9F;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container form .btn:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+}
