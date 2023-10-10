@@ -14,10 +14,8 @@ exports.registrarCuenta = async(req, res) => {
         console.log('Se creo el usuario', crearUsuario);
     } catch (error) {
         const erroresSequelize = error.errors.map(err => err.message);
-        //console.log(erroresSequelize);
-        
-        req.flash('error', erroresSequelize);
-        res.redirect('/registrar');
+        console.log(erroresSequelize);
+
     }
 
 
