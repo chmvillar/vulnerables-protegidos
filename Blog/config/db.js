@@ -13,13 +13,6 @@ module.exports = new Sequelize('Voluntarios', 'Admin', '3456',{
 });
 
 
-
-
-
-
-
-
-
 //const mongoose = require('mongoose');
 //require('dotenv').config({path: 'variables.env'});
 
