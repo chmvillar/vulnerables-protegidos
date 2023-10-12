@@ -6,6 +6,7 @@ const usuariosController = require('../controllers/usuariosControllers')
 const forocontroller = require('../controllers/foroControllers')
 const registrarcontroller = require('../controllers/registrarControllers')
 const authController = require('../controllers/authControllers')
+const adminController = require('../controllers/adminControllers')
 
 module.exports = function(){
     router.get('/', homeController.home);
@@ -14,5 +15,8 @@ module.exports = function(){
     router.get('/foro', forocontroller.foro);
     router.get('/registrar', registrarcontroller.registrar);
     router.post('/registrar', registrarcontroller.registrarCuenta);
+    
+    router.get('/administracion',
+        adminController.panelAdministrador);
     return router;
 }
