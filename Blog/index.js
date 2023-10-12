@@ -9,9 +9,15 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const passport = require('./config/passport');
+
+
+
 
 //configuracion BD 
 const db = require('./config/db');
+
+
     require('./models/Usuarios');
     db.sync().then(() => console.log('Conexion Existosa a la DB')).catch((error) => console.log(error));
 
@@ -45,6 +51,10 @@ app.use(session({
     saveUninitialized : false
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.use(flash());
 //middleware (voluntario con cuenta iniciada, fecha etc)
 app.unsubscribe((req, res, next) =>{
@@ -53,6 +63,8 @@ app.unsubscribe((req, res, next) =>{
     res.localsyear = fecha.getFullYear();
     next();
 });
+
+
 //routing
 app.use('/', router())
 
