@@ -2,6 +2,8 @@ const Sequelize = require('sequelize');
 const db = require('../config/db');
 const uuid = require('uuid/v4');
 const Usuarios = require('./Usuarios');
+
+
 const Post = db.define('post', {
     id: {
         type: Sequelize.UUID,
@@ -31,5 +33,5 @@ const Post = db.define('post', {
     imagen:Sequelize.TEXT
 });
 
-post.belongsTo(Usuarios); 
+Post.belongsTo(Usuarios); 
 module.exports = Post;
