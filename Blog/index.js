@@ -16,9 +16,8 @@ const passport = require('./config/passport');
 
 //configuracion BD 
 const db = require('./config/db');
-
-
     require('./models/Usuarios');
+    require('./models/Post');
     db.sync().then(() => console.log('Conexion Existosa a la DB')).catch((error) => console.log(error));
 
 
