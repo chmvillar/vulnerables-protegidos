@@ -14,6 +14,9 @@ body {
     min-height: calc(100vh - 40px); 
     margin-top: 20px; 
 }
+.titulos {
+    font-size: 30px;
+}
 
 header {
     background-color: #ffffff;
@@ -83,4 +86,93 @@ header a {
     color: #000000;
     text-align: center;
     padding: 10px 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  .campo {
+    margin-bottom: 1rem;
+  }
+  
+  .control {
+    width: 100%;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
+  
+  trix-editor {
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      width: 100%;
+    }
+  
+    form {
+      width: 100%;
+    }
+  }
+  /* Tarjeta */
+
+.tarjeta {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.tarjeta-titulo {
+  font-size: 1.5rem;
+}
+
+.tarjeta-contenido {
+  margin-top: 0.5rem;
+}
+
+/* Select */
+
+.select {
+  margin-bottom: 1rem;
+}
+
+.select select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 100%;
+  }
+
+  .select select {
+    width: 100%;
+  }
 }

@@ -7,7 +7,7 @@ const forocontroller = require('../controllers/foroControllers')
 const registrarcontroller = require('../controllers/registrarControllers')
 const authController = require('../controllers/authControllers')
 const adminController = require('../controllers/adminControllers')
-
+const postController = require('../controllers/postControllers')
 module.exports = function(){
     router.get('/', homeController.home);
     router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
@@ -15,8 +15,12 @@ module.exports = function(){
     router.get('/foro', forocontroller.foro);
     router.get('/registrar', registrarcontroller.registrar);
     router.post('/registrar', registrarcontroller.registrarCuenta);
-    
-    router.get('/administracion',
+    router.get('/administracion',  
+        authController.usuarioAutenticado,
         adminController.panelAdministrador);
+    router.get('/nuevo-post',
+        authController.usuarioAutenticado,
+        postController.formNuevoPost
+    );
     return router;
 }

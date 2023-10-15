@@ -1,0 +1,55 @@
+<main class="contenedor">
+
+    <div class="tarjeta">
+  
+      <h2 class="tarjeta-titulo">Titulo de la tarjeta</h2>
+  
+      <div class="tarjeta-contenido">
+  
+        <form action="/nuevo-post" method="POST">
+  
+          <div class="campo">
+            <label>Titulo del Post</label>
+            <div class="control">
+              <input class="input" type="text" required>
+            </div>
+          </div>
+
+          <div class="contenedor">
+            <label></label>
+            <div class="contenedor">
+              <input type="hidden" id="x" name="descripcion">
+              <trix-editor input="x"></trix-editor>
+            </div>
+          </div>
+            <div>
+                <label>Seleccione el tipo de Post</label>
+            </div>
+          <div class="select">
+            <select>
+              <option>Selección</option>
+              <option>With options</option>
+            </select>
+          </div>
+          <div>
+            <label>Seleccione una Imagen</label>
+        </div>
+          <div class="file has-name">
+            <label class="file-label">
+              <input class="file-input" type="file" name="imagen">
+              <span class="file-cta">
+                <span class="file-label">
+                  Seleccione la Imagen
+                </span>
+              </span>
+              <span class="file-name">
+                imagen.png
+              </span>
+            </label>
+          </div>
+          <br>
+          <button class="button is-success">Crear Post</button>
+        </form>
+      </div>
+    </div>
+  </main>
