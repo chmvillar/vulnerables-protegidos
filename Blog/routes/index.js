@@ -13,7 +13,9 @@ module.exports = function(){
     router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
     router.post('/iniciar-sesion', authController.autenticarUsuario);
     router.get('/foro', forocontroller.foro);
-    router.get('/registrar', registrarcontroller.registrar);
+    router.get('/registrar', 
+    authController.usuarioAutenticado,
+    registrarcontroller.registrar);
     router.post('/registrar', registrarcontroller.registrarCuenta);
     router.get('/administracion',  
         authController.usuarioAutenticado,
@@ -21,6 +23,9 @@ module.exports = function(){
     router.get('/nuevo-post',
         authController.usuarioAutenticado,
         postController.formNuevoPost
+    );
+    router.post('/nuevo-post',
+        postController.createPost
     );
     return router;
 }

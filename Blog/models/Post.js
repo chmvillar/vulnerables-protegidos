@@ -1,16 +1,14 @@
 const Sequelize = require('sequelize');
 const db = require('../config/db');
-const uuid = require('uuid/v4');
+//const uuid = require('uuid/v4');
 const Usuarios = require('./Usuarios');
 
 
 const Post = db.define('post', {
     id: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER, 
         primaryKey: true,
-        allowNull: false,
-        //genera una ID unica
-        defaultValue: uuid()
+        autoIncrement: true
     },
     nombrepost: {
         type: Sequelize.TEXT(100),
