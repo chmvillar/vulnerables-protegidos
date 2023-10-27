@@ -6,7 +6,7 @@
   
       <div class="tarjeta-contenido">
   
-        <form action="/nuevo-post" method="POST">
+        <form action="/nuevo-post" method="POST" enctype="multipart/form-data">
   
           <div class="campo">
             <label>Titulo del Post</label>
@@ -27,17 +27,11 @@
             <label>Seleccione una Imagen</label>
         </div>
           <div class="file has-name">
-            <label class="file-label">
-              <input class="file-input" type="file" name="imagen">
+            <div class="file has-name">
               <span class="file-cta">
-                <span class="file-label">
-                  Seleccione la Imagen
-                </span>
+                <input type="file" name="imagen">
               </span>
-              <span class="file-name">
-                imagen.png
-              </span>
-            </label>
+          </div>
           </div>
           <br>
           <button class="button is-success">Crear Post</button>

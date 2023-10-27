@@ -175,4 +175,8 @@ body {
   .select select {
     width: 100%;
   }
+  .post-titulo {
+    font-size: 24px; 
+  }
+
 }

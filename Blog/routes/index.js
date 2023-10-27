@@ -25,7 +25,13 @@ module.exports = function(){
         postController.formNuevoPost
     );
     router.post('/nuevo-post',
+        authController.usuarioAutenticado,
+        postController.subirImagen,
         postController.createPost
-    );
+    )
+    router.get('/editar-post/:postId',
+        authController.usuarioAutenticado,
+        postController.formEditarPost
+    )
     return router;
 }
