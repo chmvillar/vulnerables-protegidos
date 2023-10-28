@@ -44,8 +44,7 @@ exports.createPost = async (req, res) =>{
     try {
         await Post.create(post);
         req.flash('Exito', 'Se Creo Correctamente el Post');
-        res.redirect('/administracion')
-        
+        res.redirect('/administracion')  
     } catch (error) {
         console.log(error);
         req.flash('error', error);
@@ -54,11 +53,26 @@ exports.createPost = async (req, res) =>{
 }
 exports.formEditarPost = async (req, res) => {
     const post = await Post.findByPk(req.params.postId);
-    
-    
     res.render('editar-post', {
         nombrePagina : `Editar Post : ${post.nombrepost}`,
         post
 
     })
+}
+exports.editarPost = async (req, res, next) =>{
+    const post = await Post.findOne({ where : { id : req.params.postId, usuarioId : req.user.id }});
+
+    if (!post){
+        req.flash('error' , 'No valido');
+        res.redirect('/administracion');
+        return next();
+    }
+    const { nombrepost , descripcion } = req.body;
+    post.nombre = nombrepost;
+    post.descripcion = descripcion;
+
+    await post.save();
+    req.flash('exito', 'Cambios Realizados') 
+    res.redirect('/administracion');
+
 }

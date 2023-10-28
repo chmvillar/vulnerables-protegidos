@@ -33,5 +33,9 @@ module.exports = function(){
         authController.usuarioAutenticado,
         postController.formEditarPost
     )
+    router.post('/editar-post/:postId',
+        authController.usuarioAutenticado,
+        postController.editarPost
+)
     return router;
 }
