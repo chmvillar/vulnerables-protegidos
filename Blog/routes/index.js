@@ -36,6 +36,24 @@ module.exports = function(){
     router.post('/editar-post/:postId',
         authController.usuarioAutenticado,
         postController.editarPost
-)
+    )
+    router.get('/imagen-post/:postId',
+        authController.usuarioAutenticado,
+        postController.formEditarImg
+    
+    )
+    router.post('/imagen-post/:postId',
+        authController.usuarioAutenticado,
+        postController.subirImagen,
+        postController.editarImg
+    );
+    router.get('/eliminar-post/:postId',
+        authController.usuarioAutenticado,
+        postController.formEliminarPost
+    );
+    router.post('/eliminar-post/:postId',
+        authController.usuarioAutenticado,
+        postController.eliminarPost
+    );
     return router;
 }

@@ -4,6 +4,8 @@ const Post = require('../models/Post');
 
 const multer = require('multer');
 const shortid = require('shortid');
+const fileSystem = require('fs');
+
 const configuracionMulter = {
     storage: fileStorage = multer.diskStorage({
         destination: (req, file, next) =>{
@@ -73,6 +75,81 @@ exports.editarPost = async (req, res, next) =>{
 
     await post.save();
     req.flash('exito', 'Cambios Realizados') 
+    res.redirect('/administracion');
+
+}
+
+exports.formEditarImg = async (req, res) =>{
+    const post = await Post.findByPk(req.params.postId);
+    res.render('imagen-post',{
+        nombrePagina : `Editar Imagen del Post: ${post.nombrepost} `,
+    post
+    })
+}
+exports.editarImg = async (req, res, next) =>{
+    const post = await Post.findOne({ where : { id : req.params.postId, usuarioId : req.user.id }});
+
+    //verificar el grupo
+    if(!post){
+        req.flash('error', 'No valido');
+        res.redirect('/iniciar-sesion');
+        return next();
+    }
+    //verifica si es nuevo
+    if(req.file && post.imagen){
+        const imagenActual = __dirname + `/../public/uploads/post/${post.imagen}`;
+        
+        //borrar archivo
+        fileSystem.unlink(imagenActual, (error) => {
+            if(error){
+                console.log(error);
+            }
+            return;
+        })
+    }
+    if(req.file){
+        post.imagen = req.file.filename;
+    }
+
+    //Se guarda la imagen en la base de datos
+    await post.save();
+    req.flash('exito', 'Se Guardo la Imagen Correctamente')
+    res.redirect('/administracion');
+}
+
+exports.formEliminarPost = async (req, res, next) =>{
+    const post = await Post.findOne({ where : { id : req.params.postId, usuarioId : req.user.id }});
+
+    if(!post){
+        req.flash('error', 'No valido');
+        res.redirect('/administracion');
+        return next();
+    }
+    res.render('eliminar-post', {
+        nombrePagina : `eliminar este Post: ${post.nombrepost}`
+    })
+}
+exports.eliminarPost = async (req, res, next) =>{
+    const post = await Post.findOne({ where : { id : req.params.postId, usuarioId : req.user.id }});
+
+    if(!post){
+        req.flash('error', 'No valido');
+        res.redirect('/administracion');
+        return next();
+    }
+    if(post.imagen){
+        const imagenActual = __dirname + `/../public/uploads/post/${post.imagen}`;    
+        fileSystem.unlink(imagenActual, (error) => {
+            if(error){
+                console.log(error);
+            }
+            return;
+        })  
+    }
+    await Post.destroy({
+        where : { id : req.params.postId }
+    });
+    req.flash('Completado', 'Se elimino el Post Correctamente');
     res.redirect('/administracion');
 
 }

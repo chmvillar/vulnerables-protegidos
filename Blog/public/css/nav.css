@@ -147,7 +147,11 @@ body {
 .tarjeta-titulo {
   font-size: 1.5rem;
 }
+.tarjeta-subtitulo {
+  font-size: 1.2rem;
+  font-weight: 600;
 
+}
 .tarjeta-contenido {
   margin-top: 0.5rem;
 }
