@@ -1,142 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding-bottom: 40px; 
-    position: relative;
+  font-family: Arial, sans-serif;
+  background-color: #e0dfdf;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 40px); 
-    margin-top: 20px; 
-}
-.titulos {
-    font-size: 30px;
-    text-align: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
-header {
-    background-color: #ffffff;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+h1 {
+  font-size: 2rem;
 }
 
-header a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
+.campo {
+  margin: 1rem 0;
 }
 
-.container form {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    /* ajuste para el formulario */
-    margin-bottom: 300px; 
-    margin-top: 10px;
+.img {
+  margin: 1rem 0 0.5rem 0;
 }
 
-.container form h2 {
-    margin-bottom: 20px;
+.control {
+  width: 100%;
 }
 
-.container form .form-group {
-    margin-bottom: 15px;
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
 }
 
-.container form .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+trix-editor {
+  width: 100%;
+  min-height: 100px;
 }
 
-.container form .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.container form .btn {
-    background-color: #08CF9F;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.container form .btn:hover {
-    background-color: #0056b3;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #000000;
-    text-align: center;
-    padding: 10px 0;
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  .campo {
-    margin-bottom: 1rem;
-  }
-  
-  .control {
-    width: 100%;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-  }
-  
-  trix-editor {
-    width: 100%;
-    height: 100%;
-  }
-  
-  @media (max-width: 768px) {
-    main {
-      width: 100%;
-    }
-  
-    form {
-      width: 100%;
-    }
-  }
-  /* Tarjeta */
-
+/* Estilos para la tarjeta */
 .tarjeta {
   border: 1px solid #ccc;
   background-color: #ffffff;
@@ -147,18 +53,23 @@ body {
 
 .tarjeta-titulo {
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
+
 .tarjeta-subtitulo {
   font-size: 1.2rem;
   font-weight: 600;
-
 }
+
 .tarjeta-contenido {
   margin-top: 0.5rem;
 }
+
 .select {
   margin-bottom: 1rem;
 }
+
 .select select {
   width: 100%;
   padding: 0.5rem;
@@ -166,52 +77,199 @@ body {
   border-radius: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .tarjeta {
-    width: 100%;
-  }
-  .select select {
-    width: 100%;
-  }
-  }
-  .post-titulo {
-    font-size: 18px;
-}
-.tarjeta {
+.tarjeta-formularios {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
   border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.contenedor-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  margin-top: 50px;
+}
+
+.container {
   background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+}
+
+form {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 10px 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el formulario de nueva publicación */
+.contenedor-formularios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 40px;
+}
+
+.titulos {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.default-form {
+  text-align: center;
+  max-width: 800px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin: 10px 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.columnas-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenedor-txt {
+  text-align: left;
+}
+
+.contenedor-editor {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+.buscador {
+  text-align: left;
+}
+
+#formbuscador {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.map {
+  text-align: left;
+}
+
+#map {
+  height: 180px;
+}
+
+.informacion {
+  font-weight: 600;
+}
+
+.enviar {
+  text-align: center;
+}
+
+.button.is-success {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button.is-success:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la sección de publicaciones */
+.tarjeta-publicaciones ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tarjeta-publicaciones li {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin: 1rem 0;
 }
 
-/* Estilos para la tarjeta del Panel de Administrador */
-.tarjeta-administrador {
-  /* Agrega estilos específicos si es necesario */
+.tarjeta-publicaciones li p {
+  margin: 0;
 }
 
-/* Estilos para la tarjeta de Eventos Creados */
-.tarjeta-eventos {
-  /* Agrega estilos específicos si es necesario */
+.tarjeta-publicaciones img {
+  max-width: 100%;
 }
 
-/* Estilos para la tarjeta de Publicaciones Realizadas */
-.tarjeta-publicaciones {
-  /* Agrega estilos específicos si es necesario */
+.tarjeta-publicaciones .button {
+  margin-top: 0.5rem;
 }
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .tarjeta {
-      width: 100%;
-  }
-}
-.tarjeta-formularios{
-  width: 80%; 
-  margin: 0 auto; 
-  padding: 20px; 
-  background-color: #f9f9f9; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-}
-

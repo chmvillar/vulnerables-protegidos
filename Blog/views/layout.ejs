@@ -1,80 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Blog Vuluntariado <%- nombrePagina %></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/nav.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css">
-        <link rel="stylesheet" href="/css/trix.css">
-    </head>
+  <head>
+    <title>Blog Voluntariado <%- nombrePagina %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/trix.css">
+    <link rel="icon" href="http://www.islademaipo.cl/wp-content/uploads/2021/11/cropped-LOGO-MUNICIPALIDAD-1-32x32.png" sizes="32x32">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="https://portalweb.insico.cl/IslaDeMaipo/Aseo/resources/img/LOGO-MUNICIPALIDAD.png" width="90" height="90">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">
+              Inicio
+            </a>
+            <a class="navbar-item" href="/foro">
+              Foro
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Nosotros
+                </a>
+                <a class="navbar-item">
+                  Contacto
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" href="/iniciar-sesion">
+                  <strong>Iniciar Sesión</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <body>
-      <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="/">
-                <img src="https://portalweb.insico.cl/IslaDeMaipo/Aseo/resources/img/LOGO-MUNICIPALIDAD.png" width="90" height="90">
-              </a>
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item" href="/">
-                  Inicio
-                </a>  
-                <a class="navbar-item" href="/foro">
-                    Foro
-                  </a>  
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a>
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      Nosotros
-                    </a>
-                    <a class="navbar-item">
-                      Contacto
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary" href="/iniciar-sesion" >
-                      <strong>Iniciar Sesion</strong>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-         </header>
-    <!--imprimir las variables que queramos imprimiremos todos los body de las paginas realizacionadas en el views ya que este es nuestro main -->
-    <%- body %>
-     <!--
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          Todos los derechos reservados APT 2023
-        </p>
-      </div>
-  </footer>
-  -->
-  <script src="/js/trix.js"></script>
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="/dist/bundle.js"></script>
+      <%- body %>
     </body>
+    <script src="/js/trix.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/dist/bundle.js"></script>
+  </body>
 </html>
