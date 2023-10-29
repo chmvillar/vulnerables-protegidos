@@ -8,6 +8,7 @@ const registrarcontroller = require('../controllers/registrarControllers')
 const authController = require('../controllers/authControllers')
 const adminController = require('../controllers/adminControllers')
 const postController = require('../controllers/postControllers')
+const publicacionController = require('../controllers/publicacionController')
 module.exports = function(){
     router.get('/', homeController.home);
     router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
@@ -55,5 +56,10 @@ module.exports = function(){
         authController.usuarioAutenticado,
         postController.eliminarPost
     );
+    router.get('/nueva-publicacion',
+        authController.usuarioAutenticado,
+        publicacionController.formNuevaPublicacion
+    );
+    
     return router;
 }
