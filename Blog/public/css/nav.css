@@ -16,6 +16,7 @@ body {
 }
 .titulos {
     font-size: 30px;
+    text-align: center;
 }
 
 header {
@@ -155,13 +156,9 @@ body {
 .tarjeta-contenido {
   margin-top: 0.5rem;
 }
-
-/* Select */
-
 .select {
   margin-bottom: 1rem;
 }
-
 .select select {
   width: 100%;
   padding: 0.5rem;
@@ -169,18 +166,52 @@ body {
   border-radius: 0.5rem;
 }
 
-/* Responsivo */
-
 @media (max-width: 768px) {
   .tarjeta {
     width: 100%;
   }
-
   .select select {
     width: 100%;
   }
-  .post-titulo {
-    font-size: 24px; 
   }
-
+  .post-titulo {
+    font-size: 18px;
 }
+.tarjeta {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Estilos para la tarjeta del Panel de Administrador */
+.tarjeta-administrador {
+  /* Agrega estilos específicos si es necesario */
+}
+
+/* Estilos para la tarjeta de Eventos Creados */
+.tarjeta-eventos {
+  /* Agrega estilos específicos si es necesario */
+}
+
+/* Estilos para la tarjeta de Publicaciones Realizadas */
+.tarjeta-publicaciones {
+  /* Agrega estilos específicos si es necesario */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tarjeta {
+      width: 100%;
+  }
+}
+.tarjeta-formularios{
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+

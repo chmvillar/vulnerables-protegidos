@@ -5,13 +5,11 @@
       <h2 class="tarjeta-titulo"><%= nombrePagina %></h2>
   
       <div class="tarjeta-contenido">
-  
         <form  method="POST">
-  
           <div class="campo">
             <label>Titulo del Post</label>
             <div class="control">
-              <input class="input" value="<%= post.nombrepost %>" type="text" name="nombrepost" >
+              <input class="input" value="<%= post.nombrepost %>" type="text" name="nombrepost">
             </div>
           </div>
           <div class="contenedor">
@@ -21,7 +19,6 @@
               <trix-editor input="x" ></trix-editor>
             </div>
           </div>
-
           <br>
           <button class="button is-success">Guardar Cambios</button>
         </form>

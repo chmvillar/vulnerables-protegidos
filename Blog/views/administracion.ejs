@@ -1,6 +1,18 @@
 <main class="contenedor panel-administracion">
-  <div class="button-container">
-    <h1 class="titulos">Panel Administrador</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="tarjeta tarjeta-administrador">
+    <h1 class="titulos"  >Panel Administrador</h1>
     <a href="/nuevo-post">
       <button class="button is-success">Nuevo Post</button>
     </a>
@@ -11,26 +23,9 @@
       <button class="button is-warning">Nueva publicacion</button>
     </a>
   </div>
-  <br>
+  <div class="tarjeta tarjeta-eventos">
   <h1 class="titulos">Eventos Creados</h1>
-  <div >
-    <ul>
-      <li>
-        <div>
-          <p>Domingo. 15 de Octubre de 2023</p>
-          <h3>Bingo Adultos Mayores</h3>
-          <small>23 asistentes</small>
-        </div>
-        <div>
-          <a href="#" class="button is-success"> Editar </a>
-          <a href="#" class="button is-info"> Asistentes</a>
-          <a href="#" class="button is-danger"> Eliminar</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <br>
-  <div>
+  <div class="tarjeta tarjeta-publicaciones">
     <ul>
       <li>
         <div>
@@ -47,28 +42,30 @@
     </ul>
   </div>
 </div>
-<br>
-<div>
-  <h2 class="titulos">Publicaciones Realizadas</h2>
+<div class="tarjeta tarjeta-publicaciones">
+  <h2 class="titulos">Post Realizadas</h2>
+  <div>
   <% if(post.length) {  %>
           <div >
             <ul>
               <% post.forEach(post => {%>
+                <div class="tarjeta tarjeta-publicaciones">
                 <div>
                   <h1 class="post-titulo" ><%= post.nombrepost %></h1>
+                  <img src="/uploads/post/<%= post.imagen %>" width="130">
                 </div>
                 <div>
                   <a href="/editar-post/<%= post.id %>" class="button is-success"> Editar </a>
                   <a href="/imagen-post/<%= post.id %>" class="button is-info"> Imagen</a>
                   <a href="/eliminar-post/<%= post.id %>" class="button is-danger"> Eliminar</a>
                 </div>
+                </div>
             </ul>
-            <br>
             <% }) %>
           </div>
   <% } else { %>
       <p> No tienes Post Actualmente</p>  
-  <% } %>      
+  <% } %>    
 </div>
 </div>
 </main>

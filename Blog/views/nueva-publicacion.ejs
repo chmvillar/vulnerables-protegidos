@@ -7,11 +7,24 @@
    <br>
    <br>
    <br>
-    <h1><%- nombrePagina %></h1>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+    <h1 class="titulos"><%- nombrePagina %></h1>
     <form class="default-form" action="/nuevo-publicacion" method="POST">
-        <legend>Post Relacionado</legend>
-        <div >
-            <label>Post</label>
+        <div>
+            <label>Post Relacionado</label>
             <br>
             <div class="select"> 
                 <select name="postId" class="select">
@@ -23,11 +36,6 @@
                     <% } %> 
                 </select>
             </div>
-  
-          </div>
-        <div class="campo">
-            <label>Grupo</label>
- 
         </div>
         <div class="campo">
             <label>Titulo del Post</label>
@@ -49,7 +57,6 @@
                 <input class="input" type="time" name="hora" placeholder="Hora publicacion" required>
             </div>
         </div>
-    
         <div class="campo descripcion">
             <label>Descripción</label>
             <div class="contenedor-editor">
@@ -57,24 +64,22 @@
                 <trix-editor input="x"></trix-editor>
             </div>
         </div>
-        <legend>Ubicación Meeti</legend>
-
         <div class="campo buscador">
-            <label>Coloca la Dirección del Meeti</label>
             <div class="campo">
-                <label>Ubicación</label>
+                <label>Coloca la Dirección del Evento</label>
                 <div class="control">
-                <input class="input" type="text" id="formbuscador" placeholder="Ingresar ubicación" required>
+                <input class="input" type="text" id="formbuscador" placeholder="Ingresar la ubicación" required>
              <b><small>Ingresar una dirección estimada</small></b> 
             </div>
         </div>
-
-        <div class="campo mapa">
-            <div id="mapa"></div>
-            <p class="informacion">Mueve el Pin hacia el punto exacto en caso de ser necesario</p>
+        <div class="map">
+            <div id="map" style="height: 180px;"></div>
+           <b><p>Mueve el punto al lugar donde quiera establecer la dirección</p></b> 
         </div>
-
-        <p class="informacion">Confirma que los siguientes campos sean correctos:</p>
+        <br>
+        <div>
+            <p class="informacion">Confirma que los siguientes campos sean correctos:</p>
+        </div>
         <div class="campo">
             <label>Dirección</label>
             <div class="control">
@@ -95,12 +100,10 @@
             <div class="control">
               <input class="input" type="text" id="pais" name="pais" placeholder="País" required>
         </div>
-
             <input type="hidden" id="lat" name="lat">
             <input type="hidden" id="lng" name="lng">
+            <br>
         <div class="campo enviar">
-
-
             <input type="submit" class="button is-success" value="Crear Publicación">
         </div>
     </form>

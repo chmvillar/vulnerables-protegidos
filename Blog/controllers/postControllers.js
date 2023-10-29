@@ -70,7 +70,7 @@ exports.editarPost = async (req, res, next) =>{
         return next();
     }
     const { nombrepost , descripcion } = req.body;
-    post.nombre = nombrepost;
+    post.nombrepost = nombrepost;
     post.descripcion = descripcion;
 
     await post.save();
