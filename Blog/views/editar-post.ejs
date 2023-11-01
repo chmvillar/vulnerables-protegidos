@@ -6,15 +6,15 @@
   
       <div class="tarjeta-contenido">
         <form  method="POST">
-          <div class="campo">
+          <div class="campo contenedor-txt">
             <label>Titulo del Post</label>
             <div class="control">
               <input class="input" value="<%= post.nombrepost %>" type="text" name="nombrepost">
             </div>
           </div>
-          <div class="contenedor">
+          <div class="contenedor-txt">
             <label>Descripción</label>
-            <div class="contenedor">
+            <div class="contenedor-txt">
               <input type="hidden" id="x" value="<%= post.descripcion %>" name="descripcion">
               <trix-editor input="x" ></trix-editor>
             </div>

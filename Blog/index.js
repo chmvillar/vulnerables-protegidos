@@ -1,73 +1,66 @@
-//const mongoose = require('mongoose')
-//require('./config/db');
-
 const express = require('express');
 const path = require('path');
 const router = require('./routes');
 const expressEjsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
-const flash = require('connect-flash');
+const flash = require('connect-flash'); // Importa connect-flash
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
 
-
-
-
-//configuracion BD 
+// Configuración de la base de datos
 const db = require('./config/db');
-    require('./models/Usuarios');
-    require('./models/Post');
-    db.sync().then(() => console.log('Conexion Existosa a la DB')).catch((error) => console.log(error));
+require('./models/Usuarios');
+require('./models/Post');
+require('./models/Publicaciones');
+db.sync().then(() => console.log('Conexión exitosa a la DB')).catch((error) => console.log(error));
 
-
-
-require('dotenv').config({path: 'variables.env'});
-
+require('dotenv').config({ path: 'variables.env' });
 
 const app = express();
 
-//lector de los formularios
+// Lector de los formularios
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-//Se Habilita el EJS como template engine
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Se habilita el EJS como template engine
 app.use(expressEjsLayouts);
 app.set('view engine', 'ejs');
 
-//ubicacion de las vistas
+// Ubicación de las vistas
 app.set('views', path.join(__dirname, './views'));
 
-//Archivos Staticos
+// Archivos Estáticos
 app.use(express.static('public'));
 
-//cookie parser
-
+// Cookie parser
 app.use(cookieParser());
-app.use(session({
+app.use(
+  session({
     secret: process.env.SECRETO,
     key: process.env.KEY,
-    resave :false,
-    saveUninitialized : false
-}));
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+// Agrega connect-flash a tu aplicación
 app.use(flash());
-//middleware (voluntario con cuenta iniciada, fecha etc)
-app.unsubscribe((req, res, next) =>{
-    res.locals.mensajes = req.flash();
-    const fecha = new Date()
-    res.localsyear = fecha.getFullYear();
-    next();
+
+// Middleware para pasar mensajes de alerta a las vistas
+app.use((req, res, next) => {
+  res.locals.messages = req.flash();
+  const fecha = new Date();
+  res.locals.year = fecha.getFullYear();
+  next();
 });
 
-
-//routing
-app.use('/', router())
-
+// Routing
+app.use('/', router());
 
 app.listen(process.env.PORT, () => {
-    console.log('Esta Vivo!!!!');
-})
+  console.log('¡Está vivo!');
+});

@@ -1,17 +1,34 @@
 const passport = require('passport');
 // ...
-exports.autenticarUsuario = passport.authenticate('local', {
-  successRedirect: '/administracion',
-  failureRedirect: '/iniciar-sesion',
-});
 
+exports.autenticarUsuario = (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      req.flash('error', 'Ha ocurrido un error'); // Mensaje de error
+      return next(err);
+    }
+    if (!user) {
+      req.flash('error', 'Credenciales incorrectas'); // Mensaje de error
+      return res.redirect('/iniciar-sesion');
+    }
+    req.logIn(user, (err) => {
+      if (err) {
+        req.flash('error', 'Error al iniciar sesión'); // Mensaje de error
+        return next(err);
+      }
+      req.flash('success', 'Inicio de sesión exitoso'); // Mensaje de éxito
+      return res.redirect('/administracion');
+    });
+  })(req, res, next);
+};
 
-//revisa si el usuario esta autenticado
+//...
 
 exports.usuarioAutenticado = (req, res, next) => {
-    if(req.isAuthenticated() ) {
-      return next();
-    }
+  if (req.isAuthenticated()) {
+    return next();
+  }
 
-    return res.redirect('/iniciar-sesion');
-}
+  req.flash('error', 'Debes iniciar sesión para acceder a esta página'); // Mensaje de error
+  return res.redirect('/iniciar-sesion');
+};

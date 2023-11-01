@@ -60,6 +60,10 @@ module.exports = function(){
         authController.usuarioAutenticado,
         publicacionController.formNuevaPublicacion
     );
+    router.post('/nueva-publicacion',
+    authController.usuarioAutenticado,
+    publicacionController.crearPublicacion
+);
     
     return router;
 }
