@@ -75,6 +75,7 @@ module.exports = function(){
     );
     router.post('/nueva-publicacion',
         authController.usuarioAutenticado,
+        publicacionController.subirImagenPublic,
         publicacionController.crearPublicacion
     );
     router.get('/editar-publicacion/:id',

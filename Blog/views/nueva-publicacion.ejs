@@ -1,6 +1,6 @@
 <main class="contenedor-formularios">
 
-    <form class="default-form" action="/nueva-publicacion" method="POST">
+    <form class="default-form" action="/nueva-publicacion" method="POST" enctype="multipart/form-data">
         <h1 class="titulos"><%- nombrePagina %></h1>
         <div class="form-group">
             <label for="postId">Post Relacionado</label>
@@ -17,6 +17,7 @@
             <label for="titulo">Titulo de la publicación</label>
             <input class="input" type="text" name="titulo" id="titulo" placeholder="Titulo de la publicación" required>
         </div>
+
         <div class="form-group">
             <label for="invitado">Invitado</label>
             <input class="input" type="text" name="invitado" id="invitado" placeholder="Nombre Invitado (Cantante, Animador etc)">
@@ -67,6 +68,16 @@
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lng" name="lng">
         <br>
+        <div>
+            <label class="contenedor-txt img">Imagen para la publicación</label>
+        </div>
+          <div class="file has-name">
+            <div class="file has-name">
+              <span class="file-cta">
+                <input type="file" name="imagen">
+              </span>
+          </div>
+          </div>
         <div class="form-group enviar">
             <input type="submit" class="button is-success" value="Crear Publicación">
         </div>

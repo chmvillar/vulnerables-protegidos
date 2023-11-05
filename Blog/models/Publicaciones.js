@@ -1,4 +1,4 @@
-const Sequelize = require ('Sequelize');
+const Sequelize = require('sequelize');
 const db = require('../config/db');
 const slug = require('slug');
 const shortid = require('shortid');
@@ -92,8 +92,12 @@ const Publicaciones = db.define(
                 const url = slug(publicaciones.titulo).toLowerCase;
                 publicaciones.slug = `${url}-${shortid.generate()}`;
             },
+        },
+        imagen:{
+            type:Sequelize.TEXT
         }
     }
+
 );
 Publicaciones.belongsTo(Usuarios);
 Publicaciones.belongsTo(Post);

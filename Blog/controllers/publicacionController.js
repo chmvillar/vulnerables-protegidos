@@ -1,5 +1,22 @@
 const Post = require('../models/Post');
 const Publicaciones = require('../models/Publicaciones');
+const multer = require('multer')
+const shortid = require('shortid')
+
+const configuracionMulter = {
+  storage: (fileStorage = multer.diskStorage({
+    destination: (req, file, next) => {
+      next(null, __dirname+'/../public/uploads/publicaciones/');
+    },
+    filename: (req, file, next) => {
+      const extension = file.mimetype.split('/')[1];
+      next(null, `${shortid.generate()}.${extension}`);
+    }
+  })
+  )
+};
+
+const upload = multer(configuracionMulter).single('imagen');
 
 exports.formNuevaPublicacion = async (req, res) => {
   const post = await Post.findAll({ where: { usuarioId: req.user.id } });
@@ -9,10 +26,19 @@ exports.formNuevaPublicacion = async (req, res) => {
     post
   });
 };
-
+exports.subirImagenPublic = async (req, res, next) => {
+  upload(req, res, function (error) {
+    if (error) {
+      console.log(error);
+    } else {
+      next();
+    }
+  });
+};
 exports.crearPublicacion = async (req, res) => {
   const publicaciones = req.body;
   publicaciones.usuarioId = req.user.id;
+  publicaciones.imagen = req.file.filename;
 
   try {
     await Publicaciones.create(publicaciones);
