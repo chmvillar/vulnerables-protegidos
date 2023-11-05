@@ -1,6 +1,7 @@
 <main class="contenedor panel-administracion">
   <div class="tarjeta tarjeta-administrador">
     <h1 class="titulos">Panel Administrador</h1>
+
     <a href="/nuevo-post">
       <button class="button is-success">Nuevo Post</button>
     </a>
@@ -10,10 +11,11 @@
     <a href="/nueva-publicacion">
       <button class="button is-warning">Nueva publicacion</button>
     </a>
+
   </div>
   <div class="tarjeta tarjeta-eventos">
     <h1 class="titulos">Eventos Creados</h1>
-    <div class="tarjeta tarjeta-eventos">
+    <div class="tarjeta-publicaciones">
       <ul>
         <li>
           <div>
@@ -31,27 +33,68 @@
     </div>
   </div>
   <div class="tarjeta-publicaciones">
-
     <div class="tarjeta">
+      <h2 class="titulos">Publicaciones</h2>
+      <ul>
+        <% if(publicaciones.length) { %>
+          <% publicaciones.forEach(publicaciones => { %>
+            <li>
+              <div>
+                <% moment.locale('es') %>
+                <p class="fecha">Fecha Creación: <%= moment(publicaciones.fecha).format('LL');  %></p>
+                <h3>Titulo: <%= publicaciones.titulo %></h3>
+                <small><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</small>
+              </div>
+              <div>
+                <a href="/editar-publicacion/<%= publicaciones.id %>" class="button is-success">
+                  Editar
+                </a>
+                <a href="/asistencia-publicaciones/<%= publicaciones.id %>" class="button is-info">
+                  Ver Asistencia
+                </a>
+                <a href="/eliminar-publicacion/<%= publicaciones.id %>" class="button is-danger">
+                  Eliminar
+                </a>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <b><p>No tienes Publicaciones Creadas Actualmente</p></b>
+      <% } %>
+  </div>
+  
+  <div class="tarjeta">
       <h2 class="titulos">Post Realizadas</h2>
       <ul>
         <% if(post.length) { %>
           <% post.forEach(post => { %>
             <li>
-              <div>
-                <h1 class="post-titulo"><%= post.nombrepost %></h1>
-                <img src="/uploads/post/<%= post.imagen %>" width="130" />
-              </div>
-              <div>
-                <a href="/editar-post/<%= post.id %>" class="button is-success">
-                  Editar
-                </a>
-                <a href="/imagen-post/<%= post.id %>" class="button is-info">
-                  Imagen
-                </a>
-                <a href="/eliminar-post/<%= post.id %>" class="button is-danger">
-                  Eliminar
-                </a>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/uploads/post/<%= post.imagen %>" width="60" /></figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4"><%= post.nombrepost %></p>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="/editar-post/<%= post.id %>" class="button is-success">
+                      Editar
+                    </a>
+                    <a href="/imagen-post/<%= post.id %>" class="button is-info">
+                      Imagen
+                    </a>
+                    <a href="/eliminar-post/<%= post.id %>" class="button is-danger">
+                      Eliminar
+                    </a>
+                  </div>
+                </div>
               </div>
             </li>
           <% }) %>
@@ -61,4 +104,5 @@
       <% } %>
     </div>
   </div>
+ 
 </main>

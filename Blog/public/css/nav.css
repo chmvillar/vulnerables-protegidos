@@ -288,4 +288,34 @@ label {
   text-align: center;
   z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
+.contenedor-eliminar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
+.contenedor-eliminar h1 {
+    font-size: 2rem;
+}
+
+.contenedor-eliminar form {
+    max-width: 400px;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.tarjeta-administrador {
+  width: 51.8%;
+  float: left;
+  text-align: center;
+}
+
+.tarjeta-eventos {
+  width: 51.8%;
+  float: right;
+}

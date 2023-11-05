@@ -61,9 +61,24 @@ module.exports = function(){
         publicacionController.formNuevaPublicacion
     );
     router.post('/nueva-publicacion',
+        authController.usuarioAutenticado,
+        publicacionController.crearPublicacion
+    );
+    router.get('/editar-publicacion/:id',
+        authController.usuarioAutenticado,
+        publicacionController.formEditarPublicacion
+    );
+    router.post('/editar-publicacion/:id',
+        authController.usuarioAutenticado,
+        publicacionController.editarPublicacion
+    );
+    router.get('/eliminar-publicacion/:id',
+        authController.usuarioAutenticado,
+        publicacionController.formEliminarPublicacion
+    );
+    router.post('/eliminar-publicacion/:id',
     authController.usuarioAutenticado,
-    publicacionController.crearPublicacion
+    publicacionController.eliminarPublicacion
 );
-    
     return router;
 }
