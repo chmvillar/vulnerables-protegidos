@@ -1,6 +1,5 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #e0dfdf;
   margin: 0;
   padding: 0;
 }
@@ -21,6 +20,9 @@ h1 {
 }
 h2 {
   font-size: 2.8rem;
+}
+.body1 {
+  background-color: #e0dfdf;
 }
 .campo {
   margin: 1rem 0;
@@ -85,7 +87,7 @@ trix-editor {
   width: 100%;
   padding: 20px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -98,15 +100,16 @@ trix-editor {
   margin-top: 50px;
 
 }
+.contenedor-inicio-sesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  margin-top: 50px;
 
-.container {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 80%;
 }
+
+
 form {
   text-align: center;
 }
@@ -120,13 +123,6 @@ label {
   font-weight: 600;
 }
 
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-}
 
 .btn-inicio-sesion {
   padding: 1rem 4rem;
@@ -154,7 +150,7 @@ input[type="password"] {
   cursor: pointer;
   color: white;
   border-radius: 10px; 
-  background-color: #B8336A;
+  background-color: rgb(219, 124, 42);
 }
 
 .container-inicio{
@@ -275,15 +271,12 @@ label {
 #map {
   height: 180px;
 }
-
 .informacion {
   font-weight: 600;
 }
-
 .enviar {
   text-align: center;
 }
-
 .button.is-success {
   background-color: #007BFF;
   color: #fff;
@@ -293,11 +286,9 @@ label {
   cursor: pointer;
   font-weight: 500;
 }
-
 .button.is-success:hover {
   background-color: #0056b3;
 }
-
 /* Estilos para la sección de publicaciones */
 .tarjeta-publicaciones ul {
   display: grid;
@@ -401,3 +392,58 @@ label {
   padding: 0;
   margin: 0;
 }
+/*aqui */
+
+
+.contenedor-inicio-sesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+.container-login {
+  background-color: #ffffff;
+  padding: 50px; /* Aumentamos el espacio interior */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 500px; /* Aumentamos el ancho del formulario */
+}
+
+.titulo-login {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px; /* Aumentamos el tamaño del campo de entrada */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px; /* Aumentamos el tamaño de fuente */
+  margin-bottom: 15px; /* Aumentamos el espacio entre campos */
+}
+.navbar {
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aplicar sombra al nav */
+  position: relative; /* Permite controlar la posición z-index */
+  z-index: 1; /* Asegura que el nav esté por encima de otros contenidos */
+}
+
+
+
+
+
