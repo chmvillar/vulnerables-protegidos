@@ -85,6 +85,9 @@ const Publicaciones = db.define(
         asistencia : {
             type : Sequelize.ARRAY(Sequelize.INTEGER),
             defaultValue : []
+        },
+        imagen:{
+            type:Sequelize.TEXT
         }
     },{
         hooks:{
@@ -92,9 +95,6 @@ const Publicaciones = db.define(
                 const url = slug(publicaciones.titulo).toLowerCase;
                 publicaciones.slug = `${url}-${shortid.generate()}`;
             },
-        },
-        imagen:{
-            type:Sequelize.TEXT
         }
     }
 
