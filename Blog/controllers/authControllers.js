@@ -32,3 +32,13 @@ exports.usuarioAutenticado = (req, res, next) => {
   req.flash('error', 'Debes iniciar sesión para acceder a esta página'); // Mensaje de error
   return res.redirect('/iniciar-sesion');
 };
+
+exports.cerrarSesion = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'Sesión finalizada correctamente');
+    res.redirect('/iniciar-sesion');
+  });
+};

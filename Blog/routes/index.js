@@ -11,13 +11,26 @@ const postController = require('../controllers/postControllers')
 const publicacionController = require('../controllers/publicacionController')
 module.exports = function(){
     router.get('/', homeController.home);
-    router.get('/iniciar-sesion', usuariosController.formIniciarSesion);
-    router.post('/iniciar-sesion', authController.autenticarUsuario);
-    router.get('/foro', forocontroller.foro);
+    router.get('/iniciar-sesion', 
+        usuariosController.formIniciarSesion
+    );
+    router.post('/iniciar-sesion',
+        authController.autenticarUsuario
+    );
+    router.get('/cerrar-sesion',
+        authController.usuarioAutenticado,
+        authController.cerrarSesion
+    );
+    router.get('/foro', 
+        forocontroller.foro
+    );
     router.get('/registrar', 
-    authController.usuarioAutenticado,
-    registrarcontroller.registrar);
-    router.post('/registrar', registrarcontroller.registrarCuenta);
+        authController.usuarioAutenticado,
+        registrarcontroller.registrar
+    );
+    router.post('/registrar', 
+        registrarcontroller.registrarCuenta
+    );
     router.get('/administracion',  
         authController.usuarioAutenticado,
         adminController.panelAdministrador);

@@ -52,6 +52,7 @@ app.use(flash());
 
 // Middleware para pasar mensajes de alerta a las vistas
 app.use((req, res, next) => {
+  res.locals.usuario = {...req.user} || null;
   res.locals.messages = req.flash();
   const fecha = new Date();
   res.locals.year = fecha.getFullYear();
