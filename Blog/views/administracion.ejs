@@ -1,90 +1,64 @@
 <main class="contenedor panel-administracion body1">
-  <div class="tarjeta tarjeta-administrador">
+  <div class="tarjeta ">
     <h1 class="titulos">Panel Administrador</h1>
+    <div class="button-container">
 
-    <a href="/nuevo-post">
-      <button class="button is-success">Nuevo Post</button>
-    </a>
-    <a href="/nuevo-evento">
-      <button class="button is-primary">Nuevo Evento</button>
-    </a>
-    <a href="/nueva-publicacion">
-      <button class="button is-warning">Nueva publicacion</button>
-    </a>
+      <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-post')">Nueva Cartegoria</button>
+      <button class="custom-button btn-color-public" onclick="redireccionar('/nueva-publicacion')">Nueva Publicacion</button>
+    </div>
+  </div>
+  <div class="carta-fondo">
+    <h2 class="titulo-carta">Publicaciones</h2>
+    <div class="card-container">
+      <% if(publicaciones.length) { %>
+        <% publicaciones.forEach(publicaciones => { %>
+                <div class="card">
+                    <div class="container">
+                      <p class="fecha">Fecha Creación: <%= moment(publicaciones.fecha).format('LL');  %></p>
+                      <h1 class="titulo-post"><%= publicaciones.titulo %></h1>
+                      <small></small>
+                      <p class="configuracion-asistencia"><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</p>
+                    </div>
+                    <div class="button-edicion">
+                        <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-publicacion/<%= publicaciones.id %>')">Editar</button>
+                        <button class="custom-categorias btn-color-ver" onclick="redireccionar('/asistencia-publicaciones/<%= publicaciones.id %>')">Ver Asistencia</button>
+                        <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-publicacion/<%= publicaciones.id %>')">Eliminar</button>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p class="no-post-message">No tienes Publicaciones Actualmente</p>
+        <% } %>
+    </div>
+</div>
 
-  </div>
- 
-  <div class="tarjeta-publicaciones">
-    <div class="tarjeta">
-      <h2 class="titulos">Publicaciones</h2>
-      <ul>
-        <% if(publicaciones.length) { %>
-          <% publicaciones.forEach(publicaciones => { %>
-            <li>
-              <div>
-                <% moment.locale('es') %>
-                <p class="fecha">Fecha Creación: <%= moment(publicaciones.fecha).format('LL');  %></p>
-                <h4><b>Titulo: <%= publicaciones.titulo %></b></h4>
-                <small><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</small>
-              </div>
-              <div>
-                <a href="/editar-publicacion/<%= publicaciones.id %>" class="button is-success">
-                  Editar
-                </a>
-                <a href="/asistencia-publicaciones/<%= publicaciones.id %>" class="button is-info">
-                  Ver Asistencia
-                </a>
-                <a href="/eliminar-publicacion/<%= publicaciones.id %>" class="button is-danger">
-                  Eliminar
-                </a>
-              </div>
-            </li>
-          <% }) %>
-        </ul>
+  <div class="carta-fondo">
+    <h2 class="titulo-carta">Categorias</h2>
+    <div class="card-container">
+      <% if(post.length) { %>
+        <% post.forEach(post => { %>
+          <div class="card">
+            <img class="card-image" src="/uploads/post/<%= post.imagen %>" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h1 class="titulo-post"><b><%= post.nombrepost %></b></h1>
+              <p class="descripcion-post">Descripción</p>
+            </div>
+            <div class="button-edicion">
+              <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-post/<%= post.id %>')">Editar</button>
+              <button class="custom-categorias btn-color-ver" onclick="redireccionar('/imagen-post/<%= post.id %>')">Cambiar Imagen</button>
+              <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-post/<%= post.id %>')">Eliminar</button>
+            </div>
+          </div>
+        <% }) %>
       <% } else { %>
-        <b><p>No tienes Publicaciones Creadas Actualmente</p></b>
-      <% } %>
-  </div>
-  
-  <div class="tarjeta">
-      <h2 class="titulos">Post Realizadas</h2>
-      <ul>
-        <% if(post.length) { %>
-          <% post.forEach(post => { %>
-            <li>
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/uploads/post/<%= post.imagen %>" width="60" /></figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4"><%= post.nombrepost %></p>
-                    </div>
-                  </div>
-                  <div>
-                    <a href="/editar-post/<%= post.id %>" class="button is-success">
-                      Editar
-                    </a>
-                    <a href="/imagen-post/<%= post.id %>" class="button is-info">
-                      Imagen
-                    </a>
-                    <a href="/eliminar-post/<%= post.id %>" class="button is-danger">
-                      Eliminar
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          <% }) %>
-        </ul>
-      <% } else { %>
-        <p>No tienes Post Actualmente</p>
+        <p class="no-post-message">No tienes Categorias Actualmente</p>
       <% } %>
     </div>
   </div>
- 
+  
+  <script>
+    function redireccionar(url) {
+        window.location.href = url; 
+    }
+</script>
 </main>

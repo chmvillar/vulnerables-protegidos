@@ -10,36 +10,40 @@
         </form>
     </div>
 </div>
-<div class="contenedor">
-    <h2 class="titulos">Publicaciones</h2>
-    <div class="tarjeta-public">
-        <% publicaciones.forEach(publicaciones => { %>
-        <div class="tarjeta-public">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="/uploads/publicaciones/<%= publicaciones.imagen %>" width="60" /></figure>
-            </figure>
+
+  
+  <div class="publicaciones-container">
+    <h2 class="titulo">Publicaciones</h2>
+    <div class="publicaciones-grid">
+        <% publicaciones.forEach(publicacion => { %>
+        <div class="publicacion-card">
+            <div class="imagen">
+                <figure>
+                    <img src="/uploads/publicaciones/<%= publicacion.imagen %>" alt="Imagen de la publicación" />
+                </figure>
             </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                    <h4><b>Titulo: <%= publicaciones.titulo %></b></h4>                </div>
-              </div>
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <% moment.locale('es') %>
-                <p class="fecha">Fecha Creación: <%= moment(publicaciones.fecha).format('LL');  %></p>              </div>
-                <a href="/ver-publicacion/" class="btn-inicio-sesion">
+            <div class="contenido">
+                <div class="media">
+                    <div class="media-contenido">
+                        <h4><b>Título: <%= publicacion.titulo %></b></h4>
+                    </div>
+                </div>
+                <div class="descripcion">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@IslaDeMaipo</a>.
+                    <a href="#">#islademaipo</a> 
+                </div>
+                <p class="fecha">Fecha Creación: <%= moment(publicacion.fecha).format('LL');  %></p>
+                <a href="/ver-publicacion/" class="ver-publicacion-btn">
                     Ver Publicación
                 </a>
             </div>
-
-          </div>
-          <% }) %>
+        </div>
+        <% }) %>
     </div>
+</div>
+
+</div>
 </div>
 
 

@@ -367,12 +367,6 @@ label {
     border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.tarjeta-administrador {
-  width: 25%;
-  float: left;
-  text-align: center;
-}
-
 .tarjeta-eventos {
   width: 51.8%;
   float: right;
@@ -426,24 +420,4 @@ label {
   margin-bottom: 5px;
   color: #333;
 }
-
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px; /* Aumentamos el tamaño del campo de entrada */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 18px; /* Aumentamos el tamaño de fuente */
-  margin-bottom: 15px; /* Aumentamos el espacio entre campos */
-}
-.navbar {
-  background-color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aplicar sombra al nav */
-  position: relative; /* Permite controlar la posición z-index */
-  z-index: 1; /* Asegura que el nav esté por encima de otros contenidos */
-}
-
-
-
-
 
