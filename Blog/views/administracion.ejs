@@ -19,6 +19,7 @@
                       <small></small>
                       <p class="configuracion-asistencia"><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</p>
                     </div>
+                    <!-- CARBIAR EL EDITAR IMAGEN PARA QUE PUEDA ESTAR DENTRO DE  EDITAR Y SOLO QUEDARIAN 3 BOTONES V+AGREGAR PUBLICACION , EDITAR Y ELIMINAR-->
                     <div class="button-edicion">
                         <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-publicacion/<%= publicaciones.id %>')">Editar</button>
                         <button class="custom-categorias btn-color-ver" onclick="redireccionar('/asistencia-publicaciones/<%= publicaciones.id %>')">Ver Asistencia</button>
@@ -45,7 +46,8 @@
             </div>
             <div class="button-edicion">
               <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-post/<%= post.id %>')">Editar</button>
-              <button class="custom-categorias btn-color-ver" onclick="redireccionar('/imagen-post/<%= post.id %>')">Cambiar Imagen</button>
+              <button class="custom-categorias btn-color-public" onclick="crearNuevaPublicacion('<%= post.id %>')"> Nueva Publicación</button>
+
               <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-post/<%= post.id %>')">Eliminar</button>
             </div>
           </div>
@@ -60,5 +62,8 @@
     function redireccionar(url) {
         window.location.href = url; 
     }
+    function crearNuevaPublicacion(postId) {
+  window.location.href = `/nueva-publicacion?selectedPostId=${postId}`;
+}
 </script>
 </main>

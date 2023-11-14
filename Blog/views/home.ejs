@@ -16,6 +16,7 @@
     <h2 class="titulo">Publicaciones</h2>
     <div class="publicaciones-grid">
         <% publicaciones.forEach(publicacion => { %>
+
         <div class="publicacion-card">
             <div class="imagen">
                 <figure>
@@ -30,11 +31,11 @@
                 </div>
                 <div class="descripcion">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@IslaDeMaipo</a>.
-                    <a href="#">#islademaipo</a> 
+                    Phasellus nec iaculis mauris. <a href="https://www.instagram.com/laisla_opina/">@IslaDeMaipo</a>.
+                    <a href="http://www.islademaipo.cl/">#islademaipo</a> 
                 </div>
-                <p class="fecha">Fecha Creación: <%= moment(publicacion.fecha).format('LL');  %></p>
-                <a href="/ver-publicacion/" class="ver-publicacion-btn">
+                <p class="fecha">Fecha Evento: <%= moment(publicacion.fecha).format('LL');  %></p>
+                <a href="/ver-publicacion/<%= publicacion.slug %>" class="ver-publicacion-btn">
                     Ver Publicación
                 </a>
             </div>

@@ -4,13 +4,11 @@
         <h1 class="titulos"><%- nombrePagina %></h1>
         <div class="form-group">
             <label for="postId">Post Relacionado</label>
-            <select name="postId" id="postId"  class="input select">
-                <option value="" disabled selected>-- Seleccionar Post --</option>
-                <% if (post.length > 0) { %>
-                    <% post.forEach(post => { %>
-                        <option value="<%= post.id %>"><%= post.nombrepost %></option>
-                    <% }) %>
-                <% } %>
+            <select name="postId" id="postId" class="input select">
+                <option value="" disabled>-- Seleccionar Post --</option>
+                <% post.forEach(post => { %>
+                    <option value="<%= post.id %>" <% if (post.id == selectedPostId) { %>selected<% } %>><%= post.nombrepost %></option>
+                <% }) %>
             </select>
         </div>
         <div class="form-group">

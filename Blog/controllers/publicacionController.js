@@ -20,12 +20,15 @@ const upload = multer(configuracionMulter).single('imagen');
 
 exports.formNuevaPublicacion = async (req, res) => {
   const post = await Post.findAll({ where: { usuarioId: req.user.id } });
+  const selectedPostId = req.query.selectedPostId; // Obtener el ID del post de la URL
 
   res.render('nueva-publicacion', {
-    nombrePagina: 'Crear Nueva Publicación',
-    post
+      nombrePagina: 'Crear Nueva Publicación',
+      post,
+      selectedPostId, // Pasar el ID del post a la vista
   });
 };
+
 exports.subirImagenPublic = async (req, res, next) => {
   upload(req, res, function (error) {
     if (error) {

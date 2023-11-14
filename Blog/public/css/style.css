@@ -156,3 +156,38 @@
     border-radius: 6px;
 
 }
+.eliminar-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.eliminar-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.eliminar-title {
+    color: #333;
+    font-size: 2em;
+}
+
+.eliminar-legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.eliminar-text {
+    color: #888;
+}
+
+.eliminar-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+<div class="card-fondo">
+    <div class="card-header">
+        <h1><%= publicaciones.titulo %></h1>
+    </div>
+    <div class="card-body">
+        <img class="img-public" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
+    </div>
+    <p class="texto-imagen" ><%= publicaciones.descripcion %></p>
+    <div class="card-footer">
+        <div class="asistencia-info">
+            <h1 class="titulo-asistencia">Asistencia</h1>
+            <p class="asistir" ><%= publicaciones.asistencia.length %> Confirmación de Asistencia</p>
+            <button class="button-asis">Asistir</button>
+        </div>
+    </div>
+</div>

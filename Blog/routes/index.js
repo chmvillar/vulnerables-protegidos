@@ -9,8 +9,16 @@ const authController = require('../controllers/authControllers')
 const adminController = require('../controllers/adminControllers')
 const postController = require('../controllers/postControllers')
 const publicacionController = require('../controllers/publicacionController')
+const pageController = require('../controllers/front/pageController')
 module.exports = function(){
+
+
+
     router.get('/', homeController.home);
+
+    router.get('/ver-publicacion/:slug',
+        pageController.verpublicacion
+    );
     router.get('/iniciar-sesion', 
         usuariosController.formIniciarSesion
     );
