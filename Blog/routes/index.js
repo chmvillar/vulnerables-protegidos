@@ -19,6 +19,9 @@ module.exports = function(){
     router.get('/ver-publicacion/:slug',
         pageController.verpublicacion
     );
+    router.post('/asistencia-confirmada/:lug',
+        pageController.asistenciaconfir
+    )
     router.get('/iniciar-sesion', 
         usuariosController.formIniciarSesion
     );

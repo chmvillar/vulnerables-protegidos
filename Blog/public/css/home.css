@@ -2,7 +2,7 @@
   border-radius: 10px;
   overflow: hidden; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.452); 
-  margin: 20px; /* Puedes quitar margin-top y ajustar según sea necesario */
+  margin: 20px;
 }
 
 .card-header {
@@ -15,7 +15,7 @@
   background-color: #3498db;
   color: #fff;
   padding: 10px;
-  margin-top: 15%;
+  margin-top: 10%;
   border-top-left-radius: 12px; 
   border-top-right-radius: 0; 
   border-bottom-right-radius: 0; 
@@ -40,7 +40,7 @@
 
 .img-public {
   float: left;
-  width: 402px;
+  width: 502px;
   height: 402px;
   margin-right: 20px; 
   margin-left: 20px; 
@@ -55,7 +55,7 @@
 }
 
 .texto-imagen {
-  margin-top: 20px; 
+  margin-top: auto; 
 }
 
 .asistencia-info {
@@ -67,3 +67,95 @@
 .asistir {
   margin: 0;
 }
+
+.card-categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; 
+  color: #333; 
+}
+
+.card-categorias h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#contenedor-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tarjeta-categoria {
+  position: relative; 
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.tarjeta-categoria::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  opacity: 0; /* Oculta la imagen por defecto */
+  transition: opacity 0.3s ease;
+}
+
+.tarjeta-categoria:hover::before {
+  opacity: 1; /* Muestra la imagen al pasar el mouse */
+}
+
+.categoria-letra {
+  color: black; 
+}
+
+.enero::before {
+  background-image: url('/img-categoria/blog-verano.jpg');
+}
+
+.febrero::before {
+  background-image: url('/img-categoria/blog-febrero.jpg');
+}
+.marzo::before {
+  background-image: url('/img-categoria/blog-marzo.jpg');
+}
+.abril::before {
+  background-image: url('/img-categoria/blog-abril.png');
+}
+.mayo::before {
+  background-image: url('/img-categoria/blog-mayo.jpg');
+}
+.junio::before {
+  background-image: url('/img-categoria/blog-junio.png');
+}
+.julio::before {
+  background-image: url('/img-categoria/blog-julio.jpg');
+}
+.agosto::before {
+  background-image: url('/img-categoria/blog-agosto.png');
+}
+.septiembre::before {
+  background-image: url('/img-categoria/blog-septiembre.jpg');
+}
+.octubre::before {
+  background-image: url('/img-categoria/blog-octubre.png');
+}
+.noviembre::before {
+  background-image: url('/img-categoria/blog-noviembre.png');
+}
+.diciembre::before {
+  background-image: url('/img-categoria/blog-diciembre.jpg');
+}
+

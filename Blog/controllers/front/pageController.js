@@ -1,6 +1,7 @@
 const Publicaciones = require('../../models/Publicaciones');
 const Post = require('../../models/Post');
 const Usuario = require('../../models/Usuarios');
+const moment = require('moment');
 
 exports.verpublicacion = async(req, res, next) => {
     const publicaciones = await Publicaciones.findOne({ where : {slug : req.params.slug },
@@ -19,7 +20,12 @@ exports.verpublicacion = async(req, res, next) => {
     }
     res.render('ver-publicacion', {
         nombrePagina : publicaciones.titulo,
-        publicaciones
+        publicaciones,
+        moment
 
     })
+}
+
+exports.asistenciaconfir = async(req, res) => {
+    res.send('asistencia confirmada');
 }

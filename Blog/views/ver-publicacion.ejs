@@ -5,12 +5,22 @@
     <div class="card-body">
         <img class="img-public" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
     </div>
-    <p class="texto-imagen" ><%= publicaciones.descripcion %></p>
+    <h2>Descripcion</h2>
+    <p class="texto-imagen" > <%- publicaciones.descripcion %></p>
+    <div class="direccion">
+        <h2>Fecha Evento</h2>
+        <% moment.locale('es') %>
+        <p class=""><%= moment(publicaciones.fecha).format('LL');  %></p>
+        <h2>Dirección</h2>
+        <p><%= publicaciones.direccion %></p>
+    </div>
     <div class="card-footer">
         <div class="asistencia-info">
-            <h1 class="titulo-asistencia">Asistencia</h1>
-            <p class="asistir" ><%= publicaciones.asistencia.length %> Confirmación de Asistencia</p>
-            <button class="button-asis">Asistir</button>
+            <form action="/asistencia-confirmada/<%  publicaciones.slug %>" id="asistencia-confirmada"> 
+                <h1 class="titulo-asistencia">Asistencia</h1>
+                <p class="asistir" ><%= publicaciones.asistencia.length %> Confirmación de Asistencia</p>
+                <button  type="submit" class="button-asis">Asistir</button>
+            </form>
         </div>
     </div>
 </div>
