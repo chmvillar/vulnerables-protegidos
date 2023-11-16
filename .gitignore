@@ -1,1 +1,5 @@
 node_modules
+.DS_Store
+variables.env
+public/uploads/post/*
+public/uploads/publicaciones/*
