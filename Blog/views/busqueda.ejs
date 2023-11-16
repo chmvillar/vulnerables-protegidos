@@ -1,4 +1,3 @@
-
 <div class="container-inicio">
     <div class="contenedor">
         <h1 class="titulos">Buscar Publicaciones</h1>
@@ -10,27 +9,10 @@
         </form>
     </div>
 </div>
-<div class="card-categorias">
-    <h1 class="titulo">Categorias</h1>
-<div id="contenedor-categoria">
-    <a href="/post/<%= post.slug%>" class="tarjeta-categoria categoria-letra enero card-categorias">Enero</a>
-    <a href="/febrero" class="tarjeta-categoria categoria-letra febrero">Febrero</a>
-    <a href="/marzo" class="tarjeta-categoria categoria-letra marzo">Marzo</a>
-    <a href="/abril" class="tarjeta-categoria categoria-letra abril">Abril</a>
-    <a href="/mayo" class="tarjeta-categoria categoria-letra mayo">Mayo</a>
-    <a href="/junio" class="tarjeta-categoria categoria-letra junio">Junio</a>
-    <a href="/julio" class="tarjeta-categoria categoria-letra julio">Julio</a>
-    <a href="/agosto" class="tarjeta-categoria categoria-letra agosto">Agosto</a>
-    <a href="/septiembre" class="tarjeta-categoria categoria-letra septiembre">Septiembre</a>
-    <a href="/octubre" class="tarjeta-categoria categoria-letra octubre">Octubre</a>
-    <a href="/noviembre" class="tarjeta-categoria categoria-letra noviembre">Noviembre</a>
-    <a href="/diciembre" class="tarjeta-categoria categoria-letra diciembre">Diciembre</a>
-  </div>
-</div>  
-  <div class="publicaciones-container">
-    <h2 class="titulo">Publicaciones</h2>
+<div class="publicaciones-container">
+    <h2 class="titulo"><%= nombrePagina %></h2>
     <div class="publicaciones-grid">
-    <% if(publicaciones.length) { %>
+        <% if(publicaciones.length) { %>
         <% publicaciones.forEach(publicacion => { %>
 
         <div class="publicacion-card">
@@ -58,16 +40,12 @@
             </div>
         </div>
         <% }) %>
+
         <% } else { %>
             <div class="container">
-              <h4 class="no-post-message">No tienes Publicaciones Actualmente.</h4>
+              <h4 class="no-post-message">No se encontraron Publicaciones realizacionadas con la busqueda.</h4>
            </div>
            
             <% } %>
     </div>
 </div>
-
-</div>
-</div>
-
-

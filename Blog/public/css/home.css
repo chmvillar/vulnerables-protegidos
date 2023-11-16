@@ -4,21 +4,59 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.452); 
   margin: 20px;
 }
-
 .card-header {
   background-color: #3498db;
   color: #fff;
   padding: 10px;
 }
-
 .card-footer {
   background-color: #3498db;
   color: #fff;
-  padding: 10px;
-  margin-top: 10%;
-  border-top-left-radius: 12px; 
-  border-top-right-radius: 0; 
-  border-bottom-right-radius: 0; 
+  padding: 30px;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+}
+
+.texto-imagen {
+  margin-top: 20px;
+  text-align: right;
+  line-height: 1.25;
+
+}
+.texto-imagen-contenedor {
+  width: 880px;
+  height: 710px;
+  overflow: hidden;
+  margin-right: 20px; 
+  margin-left: 20px; 
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-top: -5px; 
+
+}
+.fecha-evento {
+  text-align: left;
+}
+
+.titulo-evento {
+  margin: 0; 
+  text-align: left; 
+}
+
+.direccion-evento {
+  text-align: right;
+}
+
+.direccion-titulo {
+  text-align: right;
+  margin-top: -20px;  
+}
+
+.direcciontext {
+  margin: 0;
+  text-align: right;
 }
 
 
@@ -31,13 +69,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-.titulo-asistencia {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-  text-align: right; /* Alinea el título a la derecha */
-}
-
 .img-public {
   float: left;
   width: 502px;
@@ -46,7 +77,7 @@
   margin-left: 20px; 
   margin-bottom: 20px;
   border-radius: 5px;
-  margin-top: 20px; 
+  margin-top: 120px; 
 }
 
 .card-body img {
@@ -58,15 +89,7 @@
   margin-top: auto; 
 }
 
-.asistencia-info {
-  text-align: right; 
-  width: 100%; 
-  box-sizing: border-box; 
-}
 
-.asistir {
-  margin: 0;
-}
 
 .card-categorias {
   display: flex;
@@ -109,12 +132,12 @@
   background-size: cover;
   background-position: center;
   border-radius: 8px;
-  opacity: 0; /* Oculta la imagen por defecto */
+  opacity: 0; 
   transition: opacity 0.3s ease;
 }
 
 .tarjeta-categoria:hover::before {
-  opacity: 1; /* Muestra la imagen al pasar el mouse */
+  opacity: 1; 
 }
 
 .categoria-letra {

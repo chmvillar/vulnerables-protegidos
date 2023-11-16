@@ -10,6 +10,7 @@ const adminController = require('../controllers/adminControllers')
 const postController = require('../controllers/postControllers')
 const publicacionController = require('../controllers/publicacionController')
 const pageController = require('../controllers/front/pageController')
+const busquedorController = require('../controllers/buscadorController')
 module.exports = function(){
 
 
@@ -104,6 +105,12 @@ module.exports = function(){
     router.post('/eliminar-publicacion/:id',
     authController.usuarioAutenticado,
     publicacionController.eliminarPublicacion
-);
+    );
+    router.get('/post/:post',
+        pageController.visualizarcategoria
+    );
+    router.get('/busqueda',
+        busquedorController.busqueda
+    )
     return router;
 }

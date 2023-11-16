@@ -58,10 +58,10 @@
 .no-post-message {
     font-size: 18px; 
     text-align: center;
-
-    margin: 0 auto; /* Esto ayuda a centrar el elemento horizontalmente en el contenedor */
-    display: block; /* Esto hace que el elemento ocupe todo el ancho disponible */
-    margin-top: 20px; 
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 20px;
+    max-width: 600px; 
 }
 
 

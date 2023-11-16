@@ -19,7 +19,7 @@
                       <small></small>
                       <p class="configuracion-asistencia"><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</p>
                     </div>
-                    <!-- CARBIAR EL EDITAR IMAGEN PARA QUE PUEDA ESTAR DENTRO DE  EDITAR Y SOLO QUEDARIAN 3 BOTONES V+AGREGAR PUBLICACION , EDITAR Y ELIMINAR-->
+                 
                     <div class="button-edicion">
                         <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-publicacion/<%= publicaciones.id %>')">Editar</button>
                         <button class="custom-categorias btn-color-ver" onclick="redireccionar('/asistencia-publicaciones/<%= publicaciones.id %>')">Ver Asistencia</button>
@@ -28,11 +28,12 @@
                 </div>
             <% }) %>
         <% } else { %>
-            <p class="no-post-message">No tienes Publicaciones Actualmente</p>
-        <% } %>
-    </div>
+        </div>
+          <div class="container">
+            <h4 class="no-post-message">No tienes Publicaciones Actualmente.</h4>
+         </div>         
+          <% } %>
 </div>
-
   <div class="carta-fondo">
     <h2 class="titulo-carta">Categorias</h2>
     <div class="card-container">
@@ -51,13 +52,14 @@
               <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-post/<%= post.id %>')">Eliminar</button>
             </div>
           </div>
+        </div>
         <% }) %>
       <% } else { %>
-        <p class="no-post-message">No tienes Categorias Actualmente</p>
+        <div class="container">
+          <h4 class="no-post-message">No tienes Categorias Actualmente.</h4>
+       </div>
       <% } %>
-    </div>
   </div>
-  
   <script>
     function redireccionar(url) {
         window.location.href = url; 

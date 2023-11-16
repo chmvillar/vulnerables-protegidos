@@ -165,7 +165,7 @@ label {
 .container-inicio form {
   display: flex;
   flex-direction: column;
-  max-width: 95%;
+  max-width: 50%;
   margin: 0 auto;
 }
 form input[type="text"],

@@ -1,26 +1,24 @@
 <div class="card-fondo">
     <div class="card-header">
-        <h1><%= publicaciones.titulo %></h1>
+      <h1><%= publicaciones.titulo %></h1>
     </div>
     <div class="card-body">
-        <img class="img-public" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
+      <img class="img-public" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
     </div>
-    <h2>Descripcion</h2>
-    <p class="texto-imagen" > <%- publicaciones.descripcion %></p>
-    <div class="direccion">
-        <h2>Fecha Evento</h2>
-        <% moment.locale('es') %>
-        <p class=""><%= moment(publicaciones.fecha).format('LL');  %></p>
-        <h2>Dirección</h2>
-        <p><%= publicaciones.direccion %></p>
+    <div class="texto-imagen-contenedor">
+        <h2 class="titulo-descripcion">Descripcion</h2>
+      <p class="texto-imagen" > <%- publicaciones.descripcion %></p>
     </div>
     <div class="card-footer">
-        <div class="asistencia-info">
-            <form action="/asistencia-confirmada/<%  publicaciones.slug %>" id="asistencia-confirmada"> 
-                <h1 class="titulo-asistencia">Asistencia</h1>
-                <p class="asistir" ><%= publicaciones.asistencia.length %> Confirmación de Asistencia</p>
-                <button  type="submit" class="button-asis">Asistir</button>
-            </form>
+        <div class="fecha-evento">
+            <h2 class="titulo-evento">Fecha Evento</h2>
+          <% moment.locale('es') %>
+          <p class="fechatext"><%= moment(publicaciones.fecha).format('LL'); %></p>
+        </div>
+        <div class="direccion-evento">
+          <h2 class="direccion-titulo">Dirección</h2>
+          <p class="direcciontext"><%= publicaciones.direccion %></p>
         </div>
     </div>
-</div>
+  </div>
+  
