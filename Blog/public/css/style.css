@@ -13,6 +13,7 @@
     padding: 20px; 
     margin: 20px; 
     text-align: center; 
+
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -37,9 +38,9 @@
   
 .card-image {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    min-width: 200px;
+    max-height: 280px;
+    position: relative;
+    object-fit: contain;
     padding: 10px;
 }
   
@@ -112,11 +113,13 @@
     color: #fff;
     cursor: pointer;
     margin-right: 10px;
+
 }
 .btn-color-edit{
     border: 2px solid #FFA500; 
     background-color: #FFA500;
     border-radius: 6px;
+
 }
 .btn-color-ver{
     background-color: #6cdb34;

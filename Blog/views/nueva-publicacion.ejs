@@ -3,9 +3,9 @@
     <form class="default-form" action="/nueva-publicacion" method="POST" enctype="multipart/form-data">
         <h1 class="titulos"><%- nombrePagina %></h1>
         <div class="form-group">
-            <label for="postId">Post Relacionado</label>
+            <label for="postId">Categoria Relacionado</label>
             <select name="postId" id="postId" class="input select">
-                <option value="" disabled>-- Seleccionar Post --</option>
+                <option value="" disabled>-- Seleccionar Categoria --</option>
                 <% post.forEach(post => { %>
                     <option value="<%= post.id %>" <% if (post.id == selectedPostId) { %>selected<% } %>><%= post.nombrepost %></option>
                 <% }) %>
