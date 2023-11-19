@@ -31,6 +31,10 @@
                 <input class="input" type="time" name="hora" id="hora" value="<%= publicaciones.hora  %>" required>
             </div>
         </div>
+        <div class="form-group">
+            <label for="descripcionBreve">Descripción Breve</label>
+            <input class="input" type="text" name="descripcionBreve" id="descripcionBreve" value="<%= publicaciones.descripcionBreve  %>"  placeholder="Descripción Breve Sobre el Evento" required>
+        </div>
         <div class="form-group descripcion">
             <label for="descripcion">Descripción</label>
             <div class="contenedor-editor">
@@ -56,19 +60,12 @@
             <label for="direccion">Dirección</label>
             <input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección"  value="<%= publicaciones.direccion  %>" required>
         </div>
-        <div class="form-group">
-            <label for="ciudad">Ciudad</label>
-            <input class="input" type="text" id="ciudad" name="ciudad" placeholder="Ciudad" value="<%= publicaciones.ciudad  %>" required>
-        </div>
-        <div class="form-group">
-            <label for="region">Región</label>
-            <input class="input" id="region" name="region" placeholder="Región" value="<%= publicaciones.region  %>" required>
-        </div>
+
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lng" name="lng">
         <br>
         <div class="form-group enviar">
-            <input type="submit" class="button is-success" value="Guardar Cambios">
+            <input type="submit" class="custom-createcategoria btn-color-crecate" value="Guardar Publicación">
         </div>
     </form>
 </main>

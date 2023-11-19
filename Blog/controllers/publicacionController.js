@@ -127,3 +127,23 @@ exports.eliminarPublicacion = async (req, res, next) => {
   req.flash('pass', 'Se borro la publicación');
   res.redirect('/administracion');
 }
+exports.formEliminarTodasPublicaciones = async (req, res, next) => {
+  res.render('eliminar-todas-publicaciones', {
+    nombrePagina: 'Eliminar Todas las Publicaciones'
+  });
+};
+
+exports.eliminarTodasPublicaciones = async (req, res, next) => {
+  try {
+    await Publicaciones.destroy({
+      where: { usuarioId: req.user.id }
+    });
+
+    req.flash('pass', 'Se borraron todas las publicaciones');
+    res.redirect('/administracion');
+  } catch (error) {
+    console.error(error);
+    req.flash('error', 'Ocurrió un error al intentar borrar todas las publicaciones');
+    res.redirect('/administracion');
+  }
+};

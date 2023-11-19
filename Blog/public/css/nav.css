@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #c9c9c9;
 }
 
 main {
@@ -202,8 +203,25 @@ form textarea{
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  margin-top: 40px;
+  margin-top: 30px;
 }
+.contenedor-categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 60px;
+  padding-bottom: 13.7%;
+}
+.contenedor-categoriaedit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 60px;
+  padding-bottom: 4.2%;
+}
+
 
 .titulos {
   font-size: 2rem;
@@ -385,13 +403,15 @@ label {
   align-items: center;
   height: 80vh;
 
+
+
 }
 .container-login {
   background-color: #ffffff;
   padding: 50px; /* Aumentamos el espacio interior */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 500px; /* Aumentamos el ancho del formulario */
+  width: 500px;
 }
 
 .titulo-login {

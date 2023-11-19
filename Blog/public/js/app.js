@@ -4,7 +4,7 @@ const lat = -33.750466;
 const lng = -70.902093;
 const map = L.map('map').setView([lat, lng], 12);
 
-let marker;
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

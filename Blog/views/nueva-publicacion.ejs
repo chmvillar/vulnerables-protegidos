@@ -30,6 +30,10 @@
                 <input class="input" type="time" name="hora" id="hora" placeholder="Hora publicación" required>
             </div>
         </div>
+        <div class="form-group">
+            <label for="descripcionBreve">Descripción Breve</label>
+            <input class="input" type="text" name="descripcionBreve" id="descripcionBreve" placeholder="Descripción Breve Sobre el Evento">
+        </div>
         <div class="form-group descripcion">
             <label for="descripcion">Descripción</label>
             <div class="contenedor-editor">
@@ -45,7 +49,7 @@
             </div>
         </div>
         <div class="mapa">
-            <div id="map" ></div>
+            <div id="mapa" ></div>
             <b><p>Mueve el punto al lugar donde quiera establecer la dirección</p></b>
         </div>
         <div>
@@ -54,14 +58,6 @@
         <div class="form-group">
             <label for="direccion">Dirección</label>
             <input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección" required>
-        </div>
-        <div class="form-group">
-            <label for="ciudad">Ciudad</label>
-            <input class="input" type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
-        </div>
-        <div class="form-group">
-            <label for="region">Región</label>
-            <input class="input" id="region" name="region" placeholder="Región" required>
         </div>
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lng" name="lng">

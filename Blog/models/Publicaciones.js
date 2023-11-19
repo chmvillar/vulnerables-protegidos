@@ -28,6 +28,15 @@ const Publicaciones = db.define(
         invitado : { 
             type : Sequelize.STRING
         },
+        descripcionBreve :{
+            type: Sequelize.STRING,
+            allowNull : false,
+            validate : {
+                notEmpty : {
+                    msg : 'Tienes que Agregar un titulo'
+                }
+            }
+        },
         descripcion : {
             type : Sequelize.TEXT,
             allowNull : false,
@@ -61,24 +70,6 @@ const Publicaciones = db.define(
             validate : {
                 notEmpty : {
                     msg : 'Agrega una dirección para la Publicación'
-                }
-            }
-        },
-        ciudad : {
-            type : Sequelize.STRING,
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega una ciudad para la Publicación'
-                }
-            }
-        },
-        region : {
-            type : Sequelize.STRING,
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega una region para la Publicación'
                 }
             }
         },

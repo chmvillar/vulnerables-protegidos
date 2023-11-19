@@ -11,6 +11,8 @@ const postController = require('../controllers/postControllers')
 const publicacionController = require('../controllers/publicacionController')
 const pageController = require('../controllers/front/pageController')
 const busquedorController = require('../controllers/buscadorController')
+const contactoController = require('../controllers/contactoController')
+const nosotrosController = require('../controllers/nosotrosController')
 module.exports = function(){
 
 
@@ -35,6 +37,12 @@ module.exports = function(){
     );
     router.get('/foro', 
         forocontroller.foro
+    );
+    router.get('/contacto', 
+        contactoController.contacto
+    );
+    router.get('/nosotros', 
+        nosotrosController.nosotros
     );
     router.get('/registrar', 
         authController.usuarioAutenticado,
@@ -106,6 +114,16 @@ module.exports = function(){
     authController.usuarioAutenticado,
     publicacionController.eliminarPublicacion
     );
+    router.get('/eliminar-todas-publicaciones',
+        authController.usuarioAutenticado,
+        publicacionController.formEliminarTodasPublicaciones
+    );
+
+    router.post('/eliminar-todas-publicaciones',
+        authController.usuarioAutenticado,
+        publicacionController.eliminarTodasPublicaciones
+    );
+
     router.get('/post/:post',
         pageController.visualizarcategoria
     );

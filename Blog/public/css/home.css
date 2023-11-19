@@ -3,6 +3,7 @@
   overflow: hidden; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.452); 
   margin: 20px;
+  background-color: #fff;
 }
 .card-header {
   background-color: #3498db;
@@ -33,7 +34,7 @@
   margin-left: 20px; 
   margin-bottom: 20px;
   border-radius: 5px;
-  margin-top: -5px; 
+  margin-top: 25px; 
 
 }
 .fecha-evento {
