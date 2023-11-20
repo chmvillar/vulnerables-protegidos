@@ -50,7 +50,7 @@
 
 
 .contenido {
-    padding: 20px;
+    padding: 10px;
 }
 
 
@@ -63,6 +63,7 @@
 .media-contenido {
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 

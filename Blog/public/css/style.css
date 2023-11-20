@@ -73,9 +73,9 @@
 }
 .button-edicion-publicaciones {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: center; 
     padding: 10px;
-    gap: 10px;
+    gap: 10px; 
 
 }
 .button {

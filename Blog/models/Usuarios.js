@@ -9,8 +9,6 @@ const Usuarios = db.define('usuarios', {
         autoIncrement: true
     },
     nombre : Sequelize.STRING(60),
-    imagen : Sequelize.STRING(60),
-    descripcion: Sequelize.TEXT,
     email: {
         type: Sequelize.STRING(30),
         allowNull: false, 

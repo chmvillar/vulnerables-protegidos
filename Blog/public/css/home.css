@@ -90,96 +90,11 @@
   margin-top: auto; 
 }
 
-
-
-.card-categorias {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none; 
-  color: #333; 
-}
-
-.card-categorias h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#contenedor-categoria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tarjeta-categoria {
-  position: relative; 
-  width: 100px;
-  height: 100px;
+.titulo-centrado-menu{
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 160%;
 }
-
-.tarjeta-categoria::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-}
-
-.tarjeta-categoria:hover::before {
-  opacity: 1; 
-}
-
-.categoria-letra {
-  color: black; 
-}
-
-.enero::before {
-  background-image: url('/img-categoria/blog-verano.jpg');
-}
-
-.febrero::before {
-  background-image: url('/img-categoria/blog-febrero.jpg');
-}
-.marzo::before {
-  background-image: url('/img-categoria/blog-marzo.jpg');
-}
-.abril::before {
-  background-image: url('/img-categoria/blog-abril.png');
-}
-.mayo::before {
-  background-image: url('/img-categoria/blog-mayo.jpg');
-}
-.junio::before {
-  background-image: url('/img-categoria/blog-junio.png');
-}
-.julio::before {
-  background-image: url('/img-categoria/blog-julio.jpg');
-}
-.agosto::before {
-  background-image: url('/img-categoria/blog-agosto.png');
-}
-.septiembre::before {
-  background-image: url('/img-categoria/blog-septiembre.jpg');
-}
-.octubre::before {
-  background-image: url('/img-categoria/blog-octubre.png');
-}
-.noviembre::before {
-  background-image: url('/img-categoria/blog-noviembre.png');
-}
-.diciembre::before {
-  background-image: url('/img-categoria/blog-diciembre.jpg');
-}
-

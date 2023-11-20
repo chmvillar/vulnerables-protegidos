@@ -45,7 +45,7 @@ module.exports = function(){
         nosotrosController.nosotros
     );
     router.get('/registrar', 
-        authController.usuarioAutenticado,
+
         registrarcontroller.registrar
     );
     router.post('/registrar', 

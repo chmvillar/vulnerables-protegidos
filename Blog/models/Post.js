@@ -4,7 +4,7 @@ const db = require('../config/db');
 const Usuarios = require('./Usuarios');
 
 
-const Post = db.define('post', {
+const Post = db.define('categoria', {
     id: {
         type: Sequelize.INTEGER, 
         primaryKey: true,
