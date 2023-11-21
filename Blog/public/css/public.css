@@ -8,10 +8,6 @@
     text-align: center; 
 }
 
-.titulo {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
 
 
 .publicaciones-grid {
@@ -49,9 +45,6 @@
 }
 
 
-.contenido {
-    padding: 10px;
-}
 
 
 .media {
@@ -67,17 +60,8 @@
 }
 
 
-.descripcion {
-    font-size: 16px;
-    margin-top: 10px;
-    color: #666;
-}
 
 
-.fecha {
-    font-size: 14px;
-    color: #888;
-}
 
 
 .ver-publicacion-btn {

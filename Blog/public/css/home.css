@@ -20,12 +20,7 @@
   align-items: flex-start; 
 }
 
-.texto-imagen {
-  margin-top: 20px;
-  text-align: right;
-  line-height: 1.25;
 
-}
 .texto-imagen-contenedor {
   width: 880px;
   height: 710px;
@@ -37,6 +32,8 @@
   margin-top: 25px; 
 
 }
+
+
 .fecha-evento {
   text-align: left;
 }
@@ -54,13 +51,10 @@
   text-align: right;
   margin-top: -20px;  
 }
-
 .direcciontext {
   margin: 0;
   text-align: right;
 }
-
-
 .button-asis {
   background-color: #e74c3c;
   color: #fff;
@@ -90,11 +84,3 @@
   margin-top: auto; 
 }
 
-.titulo-centrado-menu{
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 160%;
-}

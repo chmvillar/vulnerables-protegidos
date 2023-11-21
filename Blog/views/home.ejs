@@ -1,21 +1,18 @@
-
 <div class="container-inicio">
     <div class="contenedor">
         <h1 class="titulos">Buscar Publicaciones</h1>
         <form action="/busqueda" method="GET">
-
             <input type="text" name="titulo" placeholder="Titulo de la Publicacion">
-
             <input type="submit" value="Buscar" class="btn-buscador">
         </form>
     </div>
 </div>
-  <div class="carta-fondo">
+  <div class="carta-fondo-home">
     <h2 class="titulo">Publicaciones</h2>
     <div class="card-container">
     <% if(publicaciones.length) { %>
         <% publicaciones.forEach(publicacion => { %>
-        <div class="publicacion-card">
+        <div class="publicacion-card-home">
             <div class="imagen">
                 <figure>
                     <img src="/uploads/publicaciones/<%= publicacion.imagen %>" alt="Imagen de la publicación" />
@@ -23,7 +20,7 @@
             </div>
             <div class="contenido">
                 <div >
-                    <div class="contenedor-titulo-centrado-menu">
+                    <div class="contenedor titulo-centrado-menu">
                         <h4 class="titulo-centrado-menu"><%= publicacion.titulo %></h4>
                     </div>
                 </div>
@@ -41,11 +38,103 @@
         <% }) %>
         <% } else { %>
             <div class="container">
-              <h4 class="no-post-message">No tienes Publicaciones Actualmente.</h4>
+              <h4 class="not-publication">No tienes Publicaciones Actualmente.</h4>
            </div>
         <% } %>
     </div>
 </div>
 </div>
+
+<style>
+.titulo-centrado-menu{
+  
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.descripcion {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #666;
+}
+.not-publication {
+    font-size: 18px; 
+    text-align: center;
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 20px;
+    max-width: 600px; 
+}
+.fecha {
+    font-size: 14px;
+    color: #888;
+}
+.publicacion-card-home {
+    flex-basis: calc(33.33% - 20px); 
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    overflow: hidden;
+    text-align: center; 
+}
+.titulo {
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-top: 2%;
+}
+.container-inicio{
+  padding:3rem 0;
+  background-color: #F2F2F2;
+}
+.btn-buscador {
+  padding: 1rem 4rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: none;
+  flex: 0 0 100%;
+  color: white;
+  border-radius: 10px; 
+  background-color: rgb(42, 113, 219);
+  font-family: 'Varela Round', sans-serif;
+  
+}
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+@media (min-width:768px) {
+  .container-inicio form {
+      flex-direction: row;
+      align-items: flex-start;
+      font-family: 'Varela Round', sans-serif;
+
+  }
+  .container-inicio form select, 
+  .container-inicio form input[type="text"] {
+      margin-right: 1rem;
+      border-radius: 12px;
+  }
+  .container-inicio input {
+      flex: 1;
+  }
+}
+.contenido {
+    padding: 10px;
+    text-align: center; 
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px; 
+}
+</style>
 
 

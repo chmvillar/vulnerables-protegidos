@@ -1,9 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #c9c9c9;
-}
+
 
 main {
   display: flex;
@@ -22,9 +17,7 @@ h1 {
 h2 {
   font-size: 2.8rem;
 }
-.body1 {
-  background-color: #e0dfdf;
-}
+
 .campo {
   margin: 1rem 0;
 }
@@ -139,25 +132,9 @@ label {
   color: white;
   border-radius: 10px; 
 }
-.btn-buscador {
-  padding: 1rem 4rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.3rem;
-  border: none;
-  width: 100%;
-  display: block;
-  flex: 0 0 100%;
-  cursor: pointer;
-  color: white;
-  border-radius: 10px; 
-  background-color: rgb(219, 124, 42);
-}
 
-.container-inicio{
-  padding:3rem 0;
-  background-color: #F2F2F2;
-}
+
+
 .container-inicio h2 {
   padding: 1rem 0 2rem 0;
   margin: 0;
@@ -183,19 +160,7 @@ form textarea{
     margin-bottom: 2rem;
 }
 
-@media (min-width:768px) {
-  .container-inicio form {
-      flex-direction: row;
-      align-items: flex-start;
-  }
-  .container-inicio form select, 
-  .container-inicio form input[type="text"] {
-      margin-right: 1rem;
-  }
-  .container-inicio input {
-      flex: 1;
-  }
-}
+
 
 /* Estilos para el formulario de nueva publicación */
 .contenedor-formularios {
@@ -249,12 +214,6 @@ label {
   font-weight: 600;
 }
 
-.input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-}
 
 .columnas-2 {
   display: flex;
@@ -406,20 +365,8 @@ label {
 
 
 }
-.container-login {
-  background-color: #ffffff;
-  padding: 50px; /* Aumentamos el espacio interior */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 500px;
-}
 
-.titulo-login {
-  font-size: 35px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
+
 
 .form-group {
   margin: 10px 0;
