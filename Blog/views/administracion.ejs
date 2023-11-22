@@ -1,15 +1,18 @@
 <main class="contenedor panel-administracion body1">
-  <div class="tarjeta ">
+  <!-- <div class="tarjeta ">
     <h1 class="titulos">Panel Administrador</h1>
     <div class="button-container">
+      <button class="custom-button btn-color-public" onclick="redireccionar('/nueva-publicacion')">Nueva Publicacion</button>
       <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-post')">Nueva Categoria</button>
+    </div>
+  </div> -->
+
+  <div class="carta-fondo-publicaciones">
+    <h2 class="titulo-carta">Publicaciones</h2>
+    <div class="boton-categoria">
       <button class="custom-button btn-color-public" onclick="redireccionar('/nueva-publicacion')">Nueva Publicacion</button>
     </div>
-  </div>
-
-  <div class="carta-fondo">
-    <h2 class="titulo-carta">Publicaciones</h2>
-    <div class="card-container">
+    <div class="card-container-publicaciones ">
       <% if(publicaciones.length) { %>
         <% publicaciones.forEach(publicaciones => { %>
                 <div class="card">
@@ -24,22 +27,27 @@
                         <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-publicacion/<%= publicaciones.id %>')">Editar</button>
                         <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-publicacion/<%= publicaciones.id %>')">Eliminar</button>
                     </div>
+                    
                 </div>
             <% }) %>
         <% } else { %>
         </div>
+        
           <div class="container">
             <h4 class="no-post-message">No tienes Publicaciones Actualmente.</h4>
          </div>         
           <% } %>
+
+
         </div> 
-        <form method="post" >
-          <button type="submit">Borrar todas las publicaciones</button>
-        </form>
 </div>
 <div class="carta-fondo">
   <h2 class="titulo-carta">Categorias</h2>
+  <div class="boton-categoria"> 
+    <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-post')">Nueva Categoria</button>
+  </div>
   <div class="card-container">
+    
     <% if(post.length) { %>
       <% post.forEach(post => { %>
               <div class="card">
@@ -62,10 +70,9 @@
           <h4 class="no-post-message-categoria">No tienes Categorias Actualmente.</h4>
        </div>         
         <% } %>
+
       </div> 
-      <form method="post" >
-        <button type="submit">Borrar todas las Categorias</button>
-      </form>
+
 </div>
   <script>
     function redireccionar(url) {
@@ -76,8 +83,6 @@
 }
 </script>
 </main>
-
-
 <style>
 .body1 {
   background-color: #e0dfdf;
@@ -89,6 +94,23 @@
     padding: 20px; 
     margin: 20px; 
     text-align: center; 
+}
+.carta-fondo-publicaciones {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px; 
+    text-align: center; 
+    width: 97%;
+    
+}
+.card-container-publicaciones {
+    padding-top: -10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px; 
+
 }
 .titulo-carta {
     font-size: 40px; 
@@ -123,10 +145,12 @@
     justify-content: center; 
     padding: 10px;
     gap: 10px; 
+    font-size: medium;
+    font-family: 'Varela Round', sans-serif;
 }
 .custom-categorias {
     border: 2px solid #3498db;
-    padding: 10px 20px;
+    padding: 5px 16px;
     background-color: #3498db;
     color: #fff;
     cursor: pointer;
@@ -149,6 +173,7 @@
     background-color: #6cdb34;
     border: 2px solid #6cdb34;
     border-radius: 6px;
+    
 }
 .btn-color-eliminar{
     border: 2px solid #FF6B6B; 
@@ -159,22 +184,45 @@
   display: flex;
   justify-content: center; 
   padding: 10px;
-  gap: 10px; 
+
   
 }
 .no-post-message-categoria {
-    font-size: 18px; 
-    text-align: center;
-    margin: 0 auto; 
-    display: block; 
-    margin-top: 20px;
-    max-width: 600px; 
+  font-size: 18px; 
+  text-align: center;
+  margin: 0 auto; 
+  display: block; 
+  margin-top: 20px;
+  max-width: 600px; 
 }
 .fecha {
-    font-size: 14px;
-    color: #888;
-    padding-left: 2%;
-
-    
+  font-size: 14px;
+  color: #888;
+  padding-left: 2%;
+}
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+.panel-administracion{
+  padding-top: 2%;
+}
+.boton-categoria {
+  text-align: right;
+  margin-top: -5% ;
+}
+.custom-button {
+  margin-bottom: 10px; 
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+.btn-color-public{
+    border: 2px solid #00a6ff; 
+    background-color: #00a6ff;
+    border-radius: 6px;
+}
+.btn-color-cate{
+  border: 2px solid #00a6ff; 
+  background-color: #00a6ff;
+  border-radius: 6px;
 }
 </style>

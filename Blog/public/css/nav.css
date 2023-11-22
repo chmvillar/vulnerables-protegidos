@@ -94,47 +94,17 @@ trix-editor {
   margin-top: 50px;
 
 }
-.contenedor-inicio-sesion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 40vh;
-  margin-top: 50px;
 
-}
 
 
 form {
   text-align: center;
-}
-.form-group {
-  margin: 10px 0;
-  text-align: left;
 }
 
 label {
   display: block;
   font-weight: 600;
 }
-
-
-.btn-inicio-sesion {
-  padding: 1rem 4rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.3rem;
-  border: none;
-  width: 100%;
-  display: block;
-  flex: 0 0 100%;
-  cursor: pointer;
-  background-color: #0056b3;
-  color: white;
-  border-radius: 10px; 
-}
-
-
-
 .container-inicio h2 {
   padding: 1rem 0 2rem 0;
   margin: 0;
@@ -204,10 +174,7 @@ form textarea{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.form-group {
-  margin: 10px 0;
-  text-align: left;
-}
+
 
 label {
   display: block;
@@ -353,25 +320,6 @@ label {
   padding: 0;
   margin: 0;
 }
-/*aqui */
-
-
-.contenedor-inicio-sesion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-
-
-
-}
-
-
-
-.form-group {
-  margin: 10px 0;
-}
-
 label {
   display: block;
   margin-bottom: 5px;

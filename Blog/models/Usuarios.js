@@ -8,7 +8,6 @@ const Usuarios = db.define('usuarios', {
         primaryKey: true,
         autoIncrement: true
     },
-    nombre : Sequelize.STRING(60),
     email: {
         type: Sequelize.STRING(30),
         allowNull: false, 
@@ -32,9 +31,7 @@ const Usuarios = db.define('usuarios', {
     activo : {
         type: Sequelize.INTEGER,
         defaultValue: 0
-    },
-    tokenPassword : Sequelize.STRING, 
-    expiraToken : Sequelize.DATE
+    }
 }, {
     hooks: {
         beforeCreate(usuario) { 

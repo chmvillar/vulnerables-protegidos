@@ -1,42 +1,91 @@
-<div class="navbar-brand">
-  <a class="navbar-item" href="/">
-      <img src="https://portalweb.insico.cl/IslaDeMaipo/Aseo/resources/img/LOGO-MUNICIPALIDAD.png" alt="Municipalidad" width="90" height="90">
-  </a>
-  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-  </a>
+<div  class="navbar-end centered-navbar-end">
+    <a class="navbar-item" href="/">
+        <img src="https://portalweb.insico.cl/IslaDeMaipo/Aseo/resources/img/LOGO-MUNICIPALIDAD.png" alt="Municipalidad" width="90" height="90">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
 </div>
 <div id="navbarBasicExample" class="navbar-menu">
-  <div class="navbar-start">
-      <a class="navbar-item" href="/">
-          Inicio
-      </a>
-      <a class="navbar-item" href="/foro">
+    <div class="navbar-start">
+        <a class="navbar-item" href="/">
+            Inicio
+        </a>
+        <a class="navbar-item" href="https://vulnerables-protegidos.vercel.app/" target="_blank">
           Municipalidad
-      </a>
-      <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-              Más
-          </a>
-          <div class="navbar-dropdown">
-              <a class="navbar-item" href="/nosotros">
-                  Nosotros
+        </a>
+
+    </div>
+    <div class="navbar-final">
+        <div class="navbar-item">
+            <div class="buttons">
+              <a class="button-login button-admin" href="/iniciar-sesion">
+                  <strong>Iniciar Sesion</strong>
               </a>
-              <a class="navbar-item" href="/contacto">
-                  Contacto
-              </a>
-          </div>
-      </div>
-  </div>
-  <div class="navbar-end centered-navbar-end">
-      <div class="navbar-item">
-          <div class="buttons">
-              <a class="button-login button-iniciar" href="/iniciar-sesion">
-                <strong>Iniciar Sesión</strong> <i class="fas fa-sign-in-alt"></i>               
-              </a>
-          </div>
-      </div>
-  </div>
-</div>
+            </div>
+        </div>
+    </div>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .navbar-end {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        background-color: #fffefe; 
+        color: #fafafa; 
+      }
+      .navbar-item {
+        text-decoration: none;
+        margin: 0 10px;
+      }
+  
+      .navbar-burger {
+        display: none;
+      }
+  
+      #navbarBasicExample {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px;
+        background-color: #fffcfc;
+      }
+  
+      .navbar-menu {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .navbar-dropdown {
+        display: none;
+        position: absolute;
+        background-color: #333; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+  
+      .navbar-item:hover .navbar-dropdown {
+        display: block;
+      }
+  
+      .button-login {
+        background-color: #0056b3; 
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        cursor: pointer;
+      }
+    </style>

@@ -1,24 +1,124 @@
-<div class="card-fondo">
-    <div class="card-header">
-      <h1><%= publicaciones.titulo %></h1>
-    </div>
-    <div class="card-body">
-      <img class="img-public" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
-    </div>
-    <div class="texto-imagen-contenedor">
-        <h2 class="titulo-descripcion">Descripcion</h2>
-      <p class="texto-imagen" > <%- publicaciones.descripcion %></p>
-    </div>
-    <div class="card-footer">
-        <div class="fecha-evento">
-            <h2 class="titulo-evento">Fecha Evento</h2>
-          <% moment.locale('es') %>
-          <p class="fechatext"><%= moment(publicaciones.fecha).format('LL'); %></p>
-        </div>
-        <div class="direccion-evento">
-          <h2 class="direccion-titulo">Dirección</h2>
-          <p class="direcciontext"><%= publicaciones.direccion %></p>
-        </div>
-    </div>
+
+<div class="head">
+  <h2 class="titulo"><%= publicaciones.titulo %></h2>
+</div>
+<div >
+  <img class="img" src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
+  <div class="texto-publicacion"> 
+  <p ><%- publicaciones.descripcion %></p>
+</div>
+</div>
+<div class="footer">
+  <div class="hora">
+    <p class="titulo-hora"> Fecha</p>
+    <% moment.locale('es') %>
+    <p class="texto-hora"> <%= moment(publicaciones.fecha).format('LL'); %></p>
   </div>
-  
+  <div class="contador">
+    <button class="custom-asis btn-color-asis" onclick="asistir()">Asistir</button>
+  </div>
+  <div class="lugar">
+    <p class="titulo-lugar"> Dirección</p>
+    <p class="texto-lugar"> <%= publicaciones.direccion %></p>
+  </div>
+</div>
+
+<style>
+.img {
+  float: left;
+  shape-outside: url("https://img.freepik.com/vector-premium/imagen-dibujos-animados-hongo-palabra-hongo_587001-200.jpg?w=2000");
+  shape-image-threshold: .2;
+  width: 50%;
+  height: 50%;
+  padding-right: 0.8%;
+  padding-top: 0.8%;
+  padding-left: 0.8%;
+  padding-bottom: 0.8%;
+}
+.contador {
+  flex-grow: 1; 
+  max-width: 10%;
+  display: flex;
+  justify-content: center;
+}
+.head{
+  background-color: #3498db;
+}
+.footer {
+  background-color: #3498db;
+  margin-bottom: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  flex-wrap: wrap;
+}
+.titulo{
+  text-align: left;
+  color: white;
+  padding-left: 0.5%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+.box{
+  max-width: auto;
+  height: 100%;
+}
+.texto-publicacion{
+  padding-right: 1%;
+  padding-top: 3%;
+  padding-left: 1%;
+  padding-bottom: 1%;
+}
+.titulo-hora{
+  color: white;
+  font-size: 45px;
+}
+.texto-hora{
+  color: white;
+}
+.titulo-lugar{
+  color: white;
+  font-size: 45px;
+}
+.texto-lugar{
+  color: white;
+}
+.hora{
+  width: 20%;
+}
+.lugar {
+  display: grid;
+  justify-content: flex-end; 
+}
+body{
+  font-family: 'Varela Round', sans-serif;
+}
+.btn-color-asis{
+  border-radius: 6px;
+}
+.custom-asis {
+    border: 2px solid #acb6bc;
+    padding: 15px 45px;
+    background-color: #acb6bc;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+</style>
+<script>
+  let marcadoAnterior = localStorage.getItem("marcado");
+  let contador = parseInt(localStorage.getItem("contador")) || 0;
+  function asistir() {
+    const marcadoActual = localStorage.getItem("marcado");
+
+    if (marcadoActual === "true" && marcadoAnterior !== "true") {
+      contador++;
+      localStorage.setItem("contador", contador);
+    }
+    localStorage.setItem("marcado", true);
+    marcadoAnterior = "true"; 
+    console.log("Marcado: true");
+    console.log("Contador actual:", contador);
+  }
+</script>

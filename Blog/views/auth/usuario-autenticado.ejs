@@ -13,22 +13,9 @@
           <a class="navbar-item" href="/">
               Inicio
           </a>
-          <a class="navbar-item" href="/foro">
+          <a class="navbar-item" href="https://vulnerables-protegidos.vercel.app/" target="_blank">
             Municipalidad
           </a>
-          <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                  Más
-              </a>
-              <div class="navbar-dropdown">
-                  <a class="navbar-item" href="/nosotros">
-                      Nosotros
-                  </a>
-                  <a class="navbar-item" href="/contacto">
-                      Contacto
-                  </a>
-              </div>
-          </div>
       </div>
       <div class="navbar-end">
           <div class="navbar-item">
@@ -42,3 +29,79 @@
               </div>
           </div>
       </div>
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+
+        }
+    
+        .navbar-end {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding: 10px;
+          background-color: #fffefe; 
+          color: #fafafa; 
+        }
+        .navbar-item {
+          text-decoration: none;
+          margin: 0 10px;
+        }
+    
+        .navbar-burger {
+          display: none;
+        }
+    
+        #navbarBasicExample {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 3px;
+          background-color: #fffcfc;
+        }
+    
+        .navbar-menu {
+          display: flex;
+          justify-content: flex-end;
+        }
+    
+        .navbar-dropdown {
+          display: none;
+          position: absolute;
+          background-color: #333; 
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+    
+        .navbar-item:hover .navbar-dropdown {
+          display: block;
+          height: 20%;
+        }
+    
+        .button-login {
+          background-color: #0cb300; 
+          padding: 5px 10px;
+          border: none;
+          border-radius: 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 2px 2px;
+          cursor: pointer;
+        }
+        .button-cerrar {
+          background-color: #eb4040; 
+          padding: 5px 10px;
+          border: none;
+          border-radius: 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 2px 2px;
+          cursor: pointer;
+        }
+      </style>

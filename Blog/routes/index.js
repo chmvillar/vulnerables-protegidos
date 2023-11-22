@@ -22,9 +22,6 @@ module.exports = function(){
     router.get('/ver-publicacion/:slug',
         pageController.verpublicacion
     );
-    router.post('/asistencia-confirmada/:lug',
-        pageController.asistenciaconfir
-    )
     router.get('/iniciar-sesion', 
         usuariosController.formIniciarSesion
     );
@@ -111,8 +108,8 @@ module.exports = function(){
         publicacionController.formEliminarPublicacion
     );
     router.post('/eliminar-publicacion/:id',
-    authController.usuarioAutenticado,
-    publicacionController.eliminarPublicacion
+        authController.usuarioAutenticado,
+        publicacionController.eliminarPublicacion
     );
     router.get('/eliminar-todas-publicaciones',
         authController.usuarioAutenticado,
@@ -123,7 +120,6 @@ module.exports = function(){
         authController.usuarioAutenticado,
         publicacionController.eliminarTodasPublicaciones
     );
-
     router.get('/post/:post',
         pageController.visualizarcategoria
     );

@@ -42,30 +42,18 @@
                 <trix-editor input="x"></trix-editor>
             </div>
         </div>
-        <div class="form-group buscador">
-            <div class="form-group">
-                <label for="formbuscador">Coloca la Dirección del Evento</label>
-                <input class="input" type="text" id="formbuscador" placeholder="Ingresar la ubicación"  value="<%= publicaciones.direccion  %>" required>
-                <b><small>Ingresar una dirección estimada</small></b>
-            </div>
-        </div>
-        <div class="mapa">
-            <div id="map" ></div>
-            <b><p>Mueve el punto al lugar donde quiera establecer la dirección</p></b>
-        </div>
-        <div>
-            <p class="informacion">Confirma que los siguientes campos sean correctos:</p>
-        </div>
         <div class="form-group">
             <label for="direccion">Dirección</label>
             <input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección"  value="<%= publicaciones.direccion  %>" required>
         </div>
-
-        <input type="hidden" id="lat" name="lat">
-        <input type="hidden" id="lng" name="lng">
-        <br>
         <div class="form-group enviar">
             <input type="submit" class="custom-createcategoria btn-color-crecate" value="Guardar Publicación">
         </div>
     </form>
 </main>
+<style>
+.form-group {
+    margin: 10px 0;
+    text-align: left;
+}
+</style>

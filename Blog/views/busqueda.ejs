@@ -37,7 +37,7 @@
         </div>
         <% }) %>
         <% } else { %>
-            <div class="container">
+            <div class="floating-container">
               <h4 class="not-publication">No tienes Publicaciones Actualmente.</h4>
            </div>
         <% } %>
@@ -135,6 +135,16 @@ body {
     gap: 20px;
     padding: 20px; 
 }
+.floating-container {
+      width: 50%;
+      height: 100px;
+      position: absolute;
+      top: 90%;
+      display: block;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1; 
+    }
 </style>
 
 

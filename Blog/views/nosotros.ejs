@@ -1,0 +1,83 @@
+<div class="head">
+
+        <h2 class="titulo">A short heading</h2>
+
+</div>
+<div class="media">
+    <div class="img">
+      <img src="https://img.freepik.com/vector-premium/imagen-dibujos-animados-hongo-palabra-hongo_587001-200.jpg?w=2000" alt="Balloons">
+    </div>
+  
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis condimentum Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, iste recusandae tempore hic placeat consequuntur, sint quibusdam neque laborum atque reiciendis. Veniam hic omnis ratione quas corrupti quae aliquid voluptatem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. In qui voluptatum rerum sit tenetur voluptate magnam tempora fugit quaerat. Culpa similique expedita earum natus veritatis a ea necessitatibus perspiciatis voluptatem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum molestiae ullam nemo quaerat consectetur nisi, error blanditiis deleniti assumenda accusamus labore mollitia eum qui, voluptas consequatur! Incidunt praesentium adipisci volupta Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem hic nisi ex magni quos laudantium similique beatae exercitationem odit facere, accusantium nemo, sed unde obcaecati aperiam! Quis voluptas dolores ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus necessitatibus fugiat, praesentium totam voluptas omnis ipsa possimus facilis consectetur amet iste, inventore animi deserunt ipsam magni mollitia explicabo et recusandae!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi quis nobis id possimus modi, rerum voluptate commodi, velit accusamus, error inventore tenetur maiores veritatis aut! Nesciunt rem ab vel. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dicta ex, iure ut beatae dolore magni ad ab voluptas soluta molestiae? Aliquam nobis officia adipisci nemo odit quas, eligendi similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laboriosam nostrum in aperiam consectetur laborum aspernatur sit. Ipsam ad corporis ex deleniti saepe perspiciatis eos? Officia aspernatur voluptatibus exercitationem similique. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus officiis reiciendis, veniam maiores debitis fuga consequuntur provident in eius. Asperiores quisquam dolor minima magni animi? Alias deleniti voluptates repellendus fuga. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quae illum suscipit, a unde quia harum modi voluptate reprehenderit! Nostrum possimus quasi beatae harum ratione culpa eos reprehenderit delectus magnam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto cupiditate aspernatur magni itaque recusandae obcaecati porro est deserunt, consequatur ducimus nobis? Doloremque at voluptatem quod fugiat, quis sint veniam ad. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, quibusdam, assumenda placeat veritatis officia sit quam provident voluptate laborum, doloribus qui maiores ipsa doloremque saepe illo magni! A, rerum officiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eveniet deserunt id illum dolor animi eius, commodi quisquam aut sit unde, perspiciatis voluptates provident nisi blanditiis? Dolores molestias repellendus odio!.</p>
+    </div>
+  </div>
+  <div class="footer"></div>
+  </div>
+  
+
+  <style>
+.img {
+  float: left;
+  shape-outside: url(../images/star-shape1-20.png);
+  shape-image-threshold: .2;
+  shape-margin: 20px;
+}
+@media (min-width: 500px) {
+  .media {
+    display: grid;
+    grid-template-columns: fit-content(200px) 1fr;
+    grid-template-rows:1fr auto;
+    grid-template-areas:
+      "image content"
+      "image footer";
+    grid-gap: 20px;
+    margin-bottom: 4em;
+  }
+.content{
+    margin-top: 10%;
+}
+  .media-flip {
+    grid-template-columns: 1fr fit-content(250px);
+    grid-template-areas:
+      "content image"
+      "footer image";
+  }
+
+  .img {
+    grid-area: image;
+    shape-image-threshold: .2;
+    shape-margin: 20px;
+    width: 600px;
+  }
+  .head{
+    background-color: #3498db;
+    width: 100%;
+    max-height: -10%;
+    margin-top: auto;
+    max-height: 100px;
+  }
+  .footer{
+    background-color: #3498db;
+    margin-bottom: auto;
+    width: 100%;
+   
+  }
+  .titulo{
+    text-align: left;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+  }
+  .hora{
+    text-align: left;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+  }
+  .direccion{
+    text-align: left;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+  }
+}
+  </style>

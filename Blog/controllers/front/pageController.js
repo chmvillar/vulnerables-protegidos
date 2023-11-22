@@ -26,9 +26,6 @@ exports.verpublicacion = async(req, res, next) => {
     })
 }
 
-exports.asistenciaconfir = async(req, res) => {
-    res.send('asistencia confirmada');
-}
 exports.visualizarcategoria = async(req, res ,next) => {
     const Post = await Post.findOne({ attributes: ['id'], where: {slug : req.post}});
     console.log(categoria.id);

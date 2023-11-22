@@ -1,8 +1,91 @@
-<template>
-    <v-app>
-      <v-container>
-        <v-app-bar :elevation="2"></v-app-bar>
-      </v-container>
-    </v-app>
-  </template>
-  
+<div class="head">
+
+  <h2 class="titulo"><%= publicaciones.titulo %></h2>
+
+</div>
+<div >
+  <img src="/uploads/publicaciones/<%= publicaciones.imagen %>" alt="<%= publicaciones.titulo %>">
+  <p class="texto-publicacion"><%- publicaciones.descripcion %></p>
+</div>
+<div class="footer">
+  <div class="hora">
+    <p class="titulo-hora"> Fecha</p>
+    <% moment.locale('es') %>
+    <p class="texto-hora"> <%= moment(publicaciones.fecha).format('LL'); %></p>
+  </div>
+  <div class="lugar">
+    <p class="titulo-lugar"> Dirección</p>
+    <p class="texto-lugar"> <%= publicaciones.direccion %></p>
+  </div>
+
+</div>
+<style>
+
+img {
+  float: left;
+  shape-outside: url("https://img.freepik.com/vector-premium/imagen-dibujos-animados-hongo-palabra-hongo_587001-200.jpg?w=2000");
+  shape-image-threshold: .2;
+  width: 20%;
+  height: 20%;
+  padding-right: 0.8%;
+  padding-top: 0.8%;
+  padding-left: 0.8%;
+  padding-bottom: 0.8%;
+}
+.head{
+    background-color: #3498db;
+    width: 100%;
+    max-height: -10%;
+    margin-top: auto;
+    max-height: 100px;
+  }
+  .footer{
+    background-color: #3498db;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .titulo{
+    text-align: left;
+    color: white;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+  }
+  .box{
+    max-width: auto;
+    height: 100%;
+  }
+  .texto-publicacion{
+    padding-right: 0.8%;
+    padding-top: 0.8%;
+    padding-left: 0.8%;
+    padding-bottom: 0.8%;
+  }
+  .titulo-hora{
+    color: white;
+    font-size: 45px;
+  }
+  .texto-hora{
+    color: white;
+  }
+  .titulo-lugar{
+    color: white;
+    font-size: 45px;
+  }
+  .texto-lugar{
+    color: white;
+  }
+  .hora{
+    width: 50%;
+  }
+  .lugar{
+    width: 50%;
+    display: grid;
+    justify-content: end;
+  }
+  body{
+    font-family: 'Varela Round', sans-serif;
+  }
+</style>
