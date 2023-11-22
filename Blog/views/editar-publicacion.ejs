@@ -47,7 +47,7 @@
             <input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección"  value="<%= publicaciones.direccion  %>" required>
         </div>
         <div class="form-group enviar">
-            <input type="submit" class="custom-createcategoria btn-color-crecate" value="Guardar Publicación">
+            <input type="submit" class="custom-editpublic btn-color-crecate" value="Guardar Publicación">
         </div>
     </form>
 </main>
@@ -55,5 +55,24 @@
 .form-group {
     margin: 10px 0;
     text-align: left;
+}
+.custom-editpublic {
+    border: 2px solid #3498db;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+} 
+
+.btn-color-crecate{
+    border: 2px solid #0051ff; 
+    background-color: #0051ff;
+    border-radius: 6px;
+    font-weight: bold; 
+
+}
+.enviar {
+  text-align: center;
 }
 </style>

@@ -8,6 +8,7 @@ const Usuarios = db.define('usuarios', {
         primaryKey: true,
         autoIncrement: true
     },
+    nombre : Sequelize.STRING(60),
     email: {
         type: Sequelize.STRING(30),
         allowNull: false, 
