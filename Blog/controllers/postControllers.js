@@ -30,7 +30,7 @@ exports.subirImagen = (req, res, next) => {
 };
 
 exports.formNuevoPost = (req, res) => {
-  res.render('nuevo-post', {
+  res.render('nuevo-categoria', {
     nombrePagina: "Crear Categoria"
   });
 };
@@ -42,19 +42,19 @@ exports.createPost = async (req, res) => {
   post.imagen = req.file.filename;
   try {
     await Post.create(post);
-    req.flash('success', 'Se Creó el Post Correctamente');
+    req.flash('success', 'Se Creó la Categoria Correctamente');
     res.redirect('/administracion');
   } catch (error) {
     console.log(error);
-    req.flash('error', 'Error al crear el Post');
-    res.redirect('/nuevo-post');
+    req.flash('error', 'Error al crear la Categoria');
+    res.redirect('/nuevo-categoria');
   }
 };
 
 exports.formEditarPost = async (req, res) => {
   const post = await Post.findByPk(req.params.postId);
-  res.render('editar-post', {
-    nombrePagina: `Editar Post : ${post.nombrepost}`,
+  res.render('editar-categoria', {
+    nombrePagina: `Edición : ${post.nombrepost}`,
     post
   });
 };
@@ -115,8 +115,8 @@ exports.editarImg = async (req, res, next) => {
 
 exports.formEliminarPost = async (req, res) => {
   const post = await Post.findOne({ where: { id: req.params.postId, usuarioId: req.user.id } });
-  res.render('eliminar-post', {
-    nombrePagina: `Eliminar este Post: ${post.nombrepost}`
+  res.render('eliminar-Categoria', {
+    nombrePagina: `¿Deseas eliminar ${post.nombrepost}?`
   });
 };
 
@@ -143,6 +143,6 @@ exports.eliminarPost = async (req, res, next) => {
     where: { id: req.params.postId }
   });
 
-  req.flash('success', 'Se eliminó el Post Correctamente');
+  req.flash('success', 'Se eliminó la Categoria Correctamente');
   res.redirect('/administracion');
 };

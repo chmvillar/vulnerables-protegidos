@@ -51,20 +51,20 @@ module.exports = function(){
     router.get('/administracion',  
         authController.usuarioAutenticado,
         adminController.panelAdministrador);
-    router.get('/nuevo-post',
+    router.get('/nuevo-categoria',
         authController.usuarioAutenticado,
         postController.formNuevoPost
     );
-    router.post('/nuevo-post',
+    router.post('/nuevo-categoria',
         authController.usuarioAutenticado,
         postController.subirImagen,
         postController.createPost
     )
-    router.get('/editar-post/:postId',
+    router.get('/editar-categoria/:postId',
         authController.usuarioAutenticado,
         postController.formEditarPost
     )
-    router.post('/editar-post/:postId',
+    router.post('/editar-categoria/:postId',
         authController.usuarioAutenticado,
         postController.editarPost
     )
@@ -78,11 +78,11 @@ module.exports = function(){
         postController.subirImagen,
         postController.editarImg
     );
-    router.get('/eliminar-post/:postId',
+    router.get('/eliminar-Categoria/:postId',
         authController.usuarioAutenticado,
         postController.formEliminarPost
     );
-    router.post('/eliminar-post/:postId',
+    router.post('/eliminar-Categoria/:postId',
         authController.usuarioAutenticado,
         postController.eliminarPost
     );

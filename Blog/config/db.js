@@ -12,6 +12,6 @@ module.exports = new Sequelize(process.env.BD_NOMBRE,
         acquire: 30000,
         idle: 10000
     },
-    //logging : false
+   
 });
 

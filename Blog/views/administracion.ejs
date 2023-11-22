@@ -42,7 +42,7 @@
 <div class="carta-fondo">
   <h2 class="titulo-carta">Categorias</h2>
   <div > 
-    <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-post')">Nueva Categoria</button>
+    <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-categoria')">Nueva Categoria</button>
   </div>
   <div class="card-container">
     
@@ -56,9 +56,9 @@
                     <p class="descripcion-post"><%- post.descripcion %></p>
                   </div>
                   <div class="button-edicion">
-                    <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-post/<%= post.id %>')">Editar</button>
+                    <button class="custom-categorias btn-color-edit" onclick="redireccionar('/editar-categoria/<%= post.id %>')">Editar</button>
                     <button class="custom-categorias btn-color-public" onclick="crearNuevaPublicacion('<%= post.id %>')"> Nueva Publicación</button>
-                    <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-post/<%= post.id %>')">Eliminar</button>
+                    <button class="custom-categorias btn-color-eliminar" onclick="redireccionar('/eliminar-Categoria/<%= post.id %>')">Eliminar</button>
                   </div>
               </div>
           <% }) %>
@@ -99,7 +99,7 @@
     border-radius: 10px;
     padding: 20px; 
     text-align: center; 
-    width: 97%;
+    width: 94.5%;
     
 }
 .card-container-publicaciones {
