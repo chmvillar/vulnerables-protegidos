@@ -152,3 +152,24 @@ exports.formEliminarTodasPublicaciones = async (req, res, next) => {
       nombrePagina: 'Eliminar Todas las Publicaciones'
    });
 };
+exports.asistirEvento = async (req, res, next) => {
+  const publicacionId = req.params.id;
+
+  try {
+      // Obtener la publicación
+      const publicacion = await Publicaciones.findByPk(publicacionId);
+
+      // Incrementar el contador de asistencia
+      publicacion.asistiEvento += 1;
+
+      // Guardar en la base de datos
+      await publicacion.save();
+
+      req.flash('success', '¡Te has registrado para asistir al evento!');
+      res.redirect(`/ver-publicacion/${publicacion.slug}`);
+  } catch (error) {
+      console.error(error);
+      req.flash('error', 'Error al registrar la asistencia');
+      res.redirect(`/ver-publicacion/${publicacion.slug}`);
+  }
+};

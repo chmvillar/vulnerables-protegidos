@@ -21,9 +21,13 @@ module.exports = function(){
     router.get('/eliminar-todas-publicaciones',
         authController.usuarioAutenticado,
         publicacionController.formEliminarTodasPublicaciones
-        );
+    );
 
-        router.post('/eliminar-todas-publicaciones',
+    router.post('/asistir-evento/:id',
+        authController.usuarioAutenticado,
+        publicacionController.asistirEvento
+    );
+    router.post('/eliminar-todas-publicaciones',
         authController.usuarioAutenticado,
         publicacionController.eliminarTodasPublicaciones
     );

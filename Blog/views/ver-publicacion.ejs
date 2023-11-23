@@ -15,8 +15,10 @@
     <p class="texto-hora"> <%= moment(publicaciones.fecha).format('LL'); %></p>
   </div>
   <div class="contador">
-    <button class="custom-asis btn-color-asis" onclick="asistir()">Asistir</button>
-  </div>
+    <form action="/asistir-evento/<%= publicaciones.id %>" method="post">
+      <button type="submit" class="custom-asis btn-color-asis">Asistir</button>
+  </form>
+    </div>
   <div class="lugar">
     <p class="titulo-lugar"> Dirección</p>
     <p class="texto-lugar"> <%= publicaciones.direccion %></p>

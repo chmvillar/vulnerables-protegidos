@@ -79,7 +79,11 @@ const Publicaciones = db.define(
         },
         imagen:{
             type:Sequelize.TEXT
-        }
+        },
+        asistiEvento: {
+            type: Sequelize.INTEGER,
+            defaultValue: 0,
+        },
     },{
         hooks:{
             async beforeCreate(publicaciones) {
