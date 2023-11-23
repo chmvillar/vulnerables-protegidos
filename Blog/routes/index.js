@@ -16,9 +16,15 @@ const nosotrosController = require('../controllers/nosotrosController')
 module.exports = function(){
 
 
-
     router.get('/', homeController.home);
-
+    router.get('/eliminar-todas-publicaciones',
+        authController.usuarioAutenticado,
+        publicacionController.formEliminarTodasPublicaciones
+    );
+    router.post('/eliminar-todas-publicaciones',
+        authController.usuarioAutenticado,
+        publicacionController.eliminarTodasPublicaciones
+    );
     router.get('/ver-publicacion/:slug',
         pageController.verpublicacion
     );

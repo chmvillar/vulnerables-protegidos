@@ -73,20 +73,22 @@ const Publicaciones = db.define(
                 }
             }
         },
-        asistencia : {
-            type : Sequelize.ARRAY(Sequelize.INTEGER),
-            defaultValue : []
+        asistencia: {
+            type: Sequelize.INTEGER,
+            defaultValue: 0, 
         },
+        
         imagen:{
             type:Sequelize.TEXT
         }
     },{
-        hooks:{
+        hooks: {
             async beforeCreate(publicaciones) {
-                const url = slug(publicaciones.titulo).toLowerCase;
+                const url = slug(publicaciones.titulo).toLowerCase(); // Add parentheses here
                 publicaciones.slug = `${url}-${shortid.generate()}`;
             },
         }
+        
     }
 
 );

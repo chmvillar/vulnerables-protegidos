@@ -1,0 +1,53 @@
+<main>
+    <div class="eliminar-container">
+
+        <form action="/eliminar-todas-publicaciones" method="POST">
+            <div class="titulo-container"> 
+            <h1 class="eliminar-title">Eliminación  de toda las publicaciones</h1>
+            </div>
+            <p class="eliminar-legend"><%- nombrePagina %></legend>
+            <p class="eliminar-text">Al eliminarlas  no se podrán <b>RECUPERAR</b></p>
+            <br>
+            <div>
+                <button class="eliminar-button">Eliminar Categoria</button>
+            </div>
+        </form>
+    </div>
+</main>
+<style>
+.titulo-container{
+
+}
+.eliminar-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.eliminar-title {
+    color: #333;
+    font-size: 2em;
+   
+}
+
+.eliminar-legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.eliminar-text {
+    color: #888;
+}
+
+.eliminar-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>

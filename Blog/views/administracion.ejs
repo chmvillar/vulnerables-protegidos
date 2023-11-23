@@ -1,16 +1,12 @@
 <main class="contenedor panel-administracion body1">
-  <!-- <div class="tarjeta ">
-    <h1 class="titulos">Panel Administrador</h1>
-    <div class="button-container">
-      <button class="custom-button btn-color-public" onclick="redireccionar('/nueva-publicacion')">Nueva Publicacion</button>
-      <button class="custom-button btn-color-cate" onclick="redireccionar('/nuevo-post')">Nueva Categoria</button>
-    </div>
-  </div> -->
-
   <div class="carta-fondo-publicaciones">
     <h2 class="titulo-carta">Publicaciones</h2>
 
+    <div class="boton-public">
+      <button class="custom-button btn-color-cate" onclick="eliminarTodasPublicaciones()">Eliminar Todas las Publicaciones</button>
+    </div>
     <div class="card-container-publicaciones ">
+
       <% if(publicaciones.length) { %>
         <% publicaciones.forEach(publicaciones => { %>
                 <div class="card">
@@ -18,7 +14,7 @@
                       <p class="fecha">Fecha Creación: <%= moment(publicaciones.fecha).format('LL');  %></p>
                       <h1 class="titulo-categoria"><%= publicaciones.titulo %></h1>
                       <small></small>
-                      <p class="configuracion-asistencia"><%= publicaciones.asistencia.length %>  Confirmación de Asistencia</p>
+                      <p class="configuracion-asistencia"><%= publicaciones.asistencia.length %> Confirmación de Asistencia</p>
                     </div>
 
                     <div class="button-edicion-publicaciones">
@@ -68,9 +64,7 @@
           <h4 class="no-post-message-categoria">No tienes Categorias Actualmente.</h4>
        </div>         
         <% } %>
-
       </div> 
-
 </div>
   <script>
     function redireccionar(url) {
@@ -80,6 +74,14 @@
   window.location.href = `/nueva-publicacion?selectedPostId=${postId}`;
 }
 </script>
+<script>
+  function eliminarTodasPublicaciones() {
+     if (confirm('¿Estás seguro de que deseas eliminar todas las publicaciones?')) {
+        window.location.href = '/eliminar-todas-publicaciones';
+     }
+  }
+</script>
+
 </main>
 <style>
 .body1 {
@@ -134,6 +136,8 @@
     position: relative;
     object-fit: contain;
     padding: 10px;
+    border-radius: 5px; 
+
 }
 .descripcion-post {
     font-size: 16px; 

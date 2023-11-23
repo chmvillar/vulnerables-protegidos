@@ -52,11 +52,17 @@
     </form>
 </main>
 <style>
+body{
+    background-color: #dddcdc;
+}
 .form-group {
     margin: 10px 0;
     text-align: left;
 }
-.custom-editpublic {
+.enviar {
+  text-align: center;
+}
+.custom-editpublic{
     border: 2px solid #3498db;
     padding: 10px 20px;
     background-color: #3498db;
@@ -72,13 +78,9 @@
     font-weight: bold; 
 
 }
-.enviar {
-  text-align: center;
-}
 .default-form {
   text-align: center;
   max-width: 800px;
-  max-height: 1050px;
   padding: 30px;
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -99,5 +101,12 @@
 }
 .titulos{
     font-size: 2.2rem;
+}
+.contenedor-editor {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+trix-editor {
+  min-height: 150px; 
 }
 </style>

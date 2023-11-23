@@ -105,20 +105,3 @@ body{
     cursor: pointer;
     margin-right: 10px;
 }
-</style>
-<script>
-  let marcadoAnterior = localStorage.getItem("marcado");
-  let contador = parseInt(localStorage.getItem("contador")) || 0;
-  function asistir() {
-    const marcadoActual = localStorage.getItem("marcado");
-
-    if (marcadoActual === "true" && marcadoAnterior !== "true") {
-      contador++;
-      localStorage.setItem("contador", contador);
-    }
-    localStorage.setItem("marcado", true);
-    marcadoAnterior = "true"; 
-    console.log("Marcado: true");
-    console.log("Contador actual:", contador);
-  }
-</script>

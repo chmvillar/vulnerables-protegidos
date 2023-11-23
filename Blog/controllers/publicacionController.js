@@ -147,3 +147,8 @@ exports.eliminarTodasPublicaciones = async (req, res, next) => {
     res.redirect('/administracion');
   }
 };
+exports.formEliminarTodasPublicaciones = async (req, res, next) => {
+   res.render('eliminar-todas-publicaciones', {
+      nombrePagina: 'Eliminar Todas las Publicaciones'
+   });
+};

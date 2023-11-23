@@ -18,3 +18,18 @@ exports.panelAdministrador = async (req, res) => {
 
     })
 };
+exports.eliminarTodasPublicaciones = async (req, res, next) => {
+    try {
+       await Publicaciones.destroy({
+          where: { usuarioId: req.user.id }
+       });
+ 
+       req.flash('pass', 'Se borraron todas las publicaciones');
+       res.redirect('/administracion');
+    } catch (error) {
+       console.error(error);
+       req.flash('error', 'Ocurrió un error al intentar borrar todas las publicaciones');
+       res.redirect('/administracion');
+    }
+ };
+ 
